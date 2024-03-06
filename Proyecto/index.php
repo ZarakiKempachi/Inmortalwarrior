@@ -21,13 +21,13 @@
             </a>
             <div>
                 <button class="ini-sesion">
-                    <a href="login.html">
+                    <a href="login.php">
                         <img src="img/usuario.png" alt="">
                         Iniciar sesión
                     </a>
                 </button>
                 <button class="ini-sesion">
-                    <a href="registro.html">
+                    <a href="registro.php">
                         Regístrate
                     </a>
                 </button>
@@ -131,34 +131,6 @@
   
         </div>
       </section>
-    <footer id="footer" >
-        <div class="container " >
-            <div class="row">
-                <div class="footer-info col-lg-4 col-md-6 ">
-                    <div class="social-links mt-3">
-                        <a href="#" class="twitter"><i class="bx bxl-twitter"><img src="img/facebook (1).png"
-                                    alt=""></a>
-                        <a href="#" class="facebook"><i class="bx bxl-facebook"><img src="img/youtube.png" alt=""
-                                    srcset=""></a>
-                        <a href="#" class="instagram"><i class="bx bxl-instagram"><img src="img/instagram.png"
-                                    alt=""></a></a>
-                        <a href="#" class="google-plus"><i class="bx bxl-discord"><img src="img/tik-tok.png"
-                                    alt=""></a></a>
-                        <a href="#" class="linkedin"><i class="bx bxl-linkedin"><img src="img/linkedin.png"
-                                    alt=""></a></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="nombre-empresa ">
-            <p>Inmortal Warriors</p>
-        </div>
-        <div class="inf-legal ">
-            <a href="informacionLegal.html" class="infLegal">Información legal</a>
-            <p>Copyright © 2023 InmortalWarriors.inc</p>
-            <a href="politicaDePrivacidad.html" class="politicaPriv">Política de privacidad</a>
-        </div>
-    </footer>
-</body>
-
-</html>
+      <?php 
+include 'modulos/footer.php';
+?>

@@ -28,19 +28,19 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a href="inicio.html" class="nav-link active text-dark" aria-current="page">Inicio</a>
+                            <a href="inicio.php" class="nav-link active text-dark" aria-current="page">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a href="boxes.html" class="nav-link text-dark">Boxes</a>
+                            <a href="boxes.php" class="nav-link text-dark">Boxes</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="tecnicas.html" class="nav-link text-dark">Técnicas de Crossfit</a>
+                            <a href="tecnicas.php" class="nav-link text-dark">Técnicas de Crossfit</a>
                         </li>
                         <li class="nav-item">
-                            <a href="wods.html" class="nav-link text-dark">Wod´s</a>
+                            <a href="wods.php" class="nav-link text-dark">Wod´s</a>
                         </li>
                         <li class="nav-item">
-                            <a href="eventos.html" class="nav-link text-dark">Eventos</a>
+                            <a href="eventos.php" class="nav-link text-dark">Eventos</a>
                         </li>
                     </ul>
                 </div>
@@ -64,7 +64,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="perfil.html">
+                            <a class="dropdown-item d-flex align-items-center" href="perfil.php">
                                 <i class="bi bi-person"></i>
                                 <span>Mi perfil</span>
                             </a>
@@ -74,7 +74,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="landing.html">
+                            <a class="dropdown-item d-flex align-items-center" href="index.php">
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Salir</span>
                             </a>
@@ -89,7 +89,7 @@
             <div class="container mt-5">
                 <div class="row">
                     <div class="perfil col-md-6 col-lg-4  mb-4">
-                        <a href="general.html" class="image-container">
+                        <a href="general.php" class="image-container">
                             <img src="img/perfil.jpg" class="img-thumbnail" alt="...">
                             <div class="overlay-text">
                                 General
@@ -97,7 +97,7 @@
                         </a>
                     </div>
                     <div class="perfil col-md-6 col-lg-4  mb-4">
-                        <a href="prs.html" class="image-container">
+                        <a href="prs.php" class="image-container">
                             <img src="img/prs.jpg" class="img-thumbnail" alt="...">
                             <div class="overlay-text">
                                 PR`S
@@ -105,7 +105,7 @@
                         </a>
                     </div>
                     <div class="perfil col-md-6 col-lg-4  mb-4">
-                        <a href="calendario.html" class="image-container">
+                        <a href="calendario.php" class="image-container">
                             <img src="img/calendario.jpg" class="img-thumbnail" alt="...">
                             <div class="overlay-text">
                                 Calendario
@@ -117,35 +117,6 @@
             </div>
         </section>
 
-        <footer id="footer" >
-            <div class="container ">
-                <div class="row">
-                    <div class="footer-info col-lg-4 col-md-6 ">
-                        <div class="social-links mt-3">
-                            <a href="#" class="twitter"><i class="bx bxl-twitter" title="twitter"><img src="img/facebook (1).png" 
-                                        alt=""></a>
-                            <a href="#" class="facebook"><i class="bx bxl-facebook" title="facebook"><img src="img/youtube.png" alt=""
-                                        srcset=""></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram" title="instagram"><img src="img/instagram.png"
-                                        alt=""></a></a>
-                            <a href="#" class="google-plus"><i class="bx bxl-discord" title="discord"><img src="img/tik-tok.png"
-                                        alt=""></a></a>
-                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"title="linkedin"><img src="img/linkedin.png"
-                                        alt=""></a></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="nombre-empresa ">
-                <p>Inmortal Warriors</p>
-            </div>
-            <div class="inf-legal ">
-                <a href="informacionLegal.html" class="infLegal">Información legal</a>
-                <p>Copyright © 2023 InmortalWarriors.inc</p>
-                <a href="politicaDePrivacidad.html" class="politicaPriv">Política de privacidad</a>
-            </div>
-        </footer>
-    </div>
-</body>
-
-</html>
+        <?php 
+include 'modulos/footer.php';
+?>
