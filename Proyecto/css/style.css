@@ -372,3 +372,13 @@ align-items: center;
 .img-eventos{
   width: 400px;
 }
+
+/*--------------------------------------------------------------
+# Boxes
+--------------------------------------------------------------*/
+.dropdown-menu{
+  position: absolute; 
+  inset: 0px 0px auto auto; 
+  margin: 0px; 
+  transform: translate3d(-16px, 38px, 0px);
+}

@@ -16,8 +16,8 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-light  sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="img/logo_bueno.jpg" width="40px">
+            <a class="navbar-brand" href="#" title="link">
+                <img src="img/logo_bueno.jpg" width="40px" title="img">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -51,8 +51,7 @@
                         <span class="d-none d-md-block dropdown-toggle ps-2">Alex Cortés</span>
                     </a><!-- End Profile Iamge Icon -->
 
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile "
-                        style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(-16px, 38px, 0px);"
+                    <ul class=" dropdown-menu dropdown-menu-end dropdown-menu-arrow profile "
                         data-popper-placement="bottom-end">
                         <li class="dropdown-header">
                             <h6>Alex Cortés</h6>
@@ -90,7 +89,7 @@
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 <div class="col mb-5">
-                    <input type="text">
+                    <input type="text" placeholder=" Buscar">
                     <button>Buscar</button>
                 </div>
                 <div class="col mb-5">

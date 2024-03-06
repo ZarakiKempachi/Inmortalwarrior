@@ -15,7 +15,7 @@
 <body style="background-image:url(img/boxoutside.jpg);background-repeat: no-repeat;background-size: cover; ">
     
     <div class="container" >
-        <a class="close-button" href="landing.html"><img src="img/cerrar.png" alt=""></a>
+        <a class="close-button" href="index.html"><img src="img/cerrar.png" alt=""></a>
       <div class="row">
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
           <div class="card border-0 shadow rounded-3 my-5" style="background-color: #1c2f3ecf;">

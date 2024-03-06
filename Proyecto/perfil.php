@@ -18,7 +18,7 @@
         <nav class="navbar navbar-expand-sm navbar-light  sticky-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="img/logo_bueno.jpg" width="40px">
+                    <img src="img/logo_bueno.jpg" width="40px" title="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -122,15 +122,15 @@
                 <div class="row">
                     <div class="footer-info col-lg-4 col-md-6 ">
                         <div class="social-links mt-3">
-                            <a href="#" class="twitter"><i class="bx bxl-twitter"><img src="img/facebook (1).png"
+                            <a href="#" class="twitter"><i class="bx bxl-twitter" title="twitter"><img src="img/facebook (1).png" 
                                         alt=""></a>
-                            <a href="#" class="facebook"><i class="bx bxl-facebook"><img src="img/youtube.png" alt=""
+                            <a href="#" class="facebook"><i class="bx bxl-facebook" title="facebook"><img src="img/youtube.png" alt=""
                                         srcset=""></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram"><img src="img/instagram.png"
+                            <a href="#" class="instagram"><i class="bx bxl-instagram" title="instagram"><img src="img/instagram.png"
                                         alt=""></a></a>
-                            <a href="#" class="google-plus"><i class="bx bxl-discord"><img src="img/tik-tok.png"
+                            <a href="#" class="google-plus"><i class="bx bxl-discord" title="discord"><img src="img/tik-tok.png"
                                         alt=""></a></a>
-                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"><img src="img/linkedin.png"
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"title="linkedin"><img src="img/linkedin.png"
                                         alt=""></a></a>
                         </div>
                     </div>
