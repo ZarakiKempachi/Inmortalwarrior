@@ -28,6 +28,7 @@
 </head>
 
 <body>
+<div class="d-flex flex-column general">
     <nav class="navbar navbar-expand-sm navbar-light  sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#" title="link">

@@ -276,7 +276,6 @@ align-items: center;
 # wods
 --------------------------------------------------------------*/
 #pagina_wods{
-  min-height: 100vh;
   flex-grow: 1;
 }
 .wods{
