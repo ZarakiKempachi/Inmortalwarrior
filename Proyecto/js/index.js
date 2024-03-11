@@ -16,10 +16,6 @@ $(document).ready(function () {
         let lname1 = $('#lname1').val();
         let uname = $('#uname').val();
         let passAdmin = $('#passAdmin').val();
-
-        console.log('alex');
-
-
         // Realizar la solicitud AJAX
         $.ajax({
             type: "POST",
@@ -44,13 +40,27 @@ $(document).ready(function () {
                     text: response,
                     icon: "success",
                 });
+                $('#nombreBox').html("");
+                $('#dirBox').html("");
+                $('#localidadBox').html("");
+                $('#emailBox').html("");
+                $('#tlfnBox').html("");
+                $('#descripcionBox').html("");
+                $('#horarioBox').html("");
+                $('#firstname').html("");
+                $('#lname1').html("");
+                $('#uname').html("");
+                $('#passAdmin').html("");
             },
             error: function (error) {
                 // Manejar errores en la solicitud AJAX
                 console.log(error.responseText);
                 alert("Error en el registro");
-            }
+            },
+            
+             
         });
+        
     });
 });
 
