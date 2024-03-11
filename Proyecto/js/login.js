@@ -18,11 +18,7 @@ $(document).ready(function(){
             success: function(response){
                 if (response === "success") {
                     // Redirigir o realizar acciones necesarias después del inicio de sesión exitoso
-                    swal({
-                        title: "Box accepted!",
-                        text: response,
-                        icon: "success",
-                    });
+                    
                     window.location.href = "inicio.php";
                 } else {
                     // Mostrar mensaje de error

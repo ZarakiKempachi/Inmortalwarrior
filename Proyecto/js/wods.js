@@ -6,7 +6,7 @@ let paginaActual = 1;
 function mostrarPagina(direccion) {
     const wods = document.querySelectorAll('.wods');
     const totalWods = wods.length;
-
+    
     // Oculta los wods actuales
     wods.forEach(wod => wod.classList.remove('wod-actual'));
 
@@ -22,17 +22,22 @@ function mostrarPagina(direccion) {
 
     // Muestra los wods de la nueva página
     const inicio = (paginaActual - 1) * entrenamientosPorPagina;
-    const fin = inicio + entrenamientosPorPagina;
-    for (let i = inicio; i < fin && i < totalWods; i++) {
+    const fin = Math.min(inicio + entrenamientosPorPagina, totalWods);
+    for (let i = inicio; i < fin; i++) {
         wods[i].classList.add('wod-actual');
     }
 
     // Actualiza el número de página en el elemento span
-    document.getElementById('paginaActual').textContent = paginaActual;
+    const paginaActualElement = document.getElementById('paginaActual');
+    if (paginaActualElement) {
+        paginaActualElement.textContent = paginaActual;
+    }
 }
 
 // Muestra la primera página al cargar la página
-mostrarPagina(0);
+document.addEventListener("DOMContentLoaded", function() {
+    mostrarPagina(0);
+});
 
 //realizar busqueda en las paginas de los wods
 function realizarBusqueda() {
