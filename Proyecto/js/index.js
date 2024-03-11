@@ -1,3 +1,4 @@
+//Registro de box
 $(document).ready(function () {
     // Manejar el envío del formulario usando AJAX
     $(document).on('click', '#formularioRegistro', function (e) {
@@ -52,3 +53,58 @@ $(document).ready(function () {
         });
     });
 });
+
+//Registro alumnos
+$(document).ready(function () {
+    // Manejar el envío del formulario usando AJAX
+    $(document).on('click', '#formularioRegistroAlumnos', function (e) {
+        e.preventDefault();
+        // Obtener los valores del formulario
+        let firstname = $('#fname').val();
+        let lname = $('#lname').val();
+        let uname = $('#username').val();
+        let emailAlumno = $('#emailAlumno').val();
+        let passAdmin = $('#password').val();
+    
+    // Realizar la solicitud AJAX
+    $.ajax({
+        type: "POST",
+        url: "../CRUD/registroAlumno.php",
+        data: {
+            firstname: firstname,
+            lname: lname,
+            uname: uname,
+            emailAlumno: emailAlumno,
+            passAdmin: passAdmin,
+        },
+        success: function (response) {
+            swal({
+                title: "Usuario aceptado!",
+                text: response,
+                icon: "success",
+            });
+        },
+        error: function (error) {
+            // Manejar errores en la solicitud AJAX
+            console.log(error.responseText);
+            alert("Error en el registro");
+        }
+
+    });
+        
+    });
+
+    $("#boxes").change(function () {
+        let boxSeleccionado = $("#boxes").val();
+        $.ajax({
+          url: "../back/CRUD/boxes.php",
+          type: "POST",
+          data: { box: boxSeleccionado },
+          success: function (respuesta) {
+            let response =
+              "<option selected>Selecciona tu Box</option>" + respuesta;
+            $("#clases").html(response);
+          },
+        });
+      });
+}); 

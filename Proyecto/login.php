@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <link rel="stylesheet" href="css/login.css">
     
     <title>Login</title>
@@ -21,7 +22,7 @@
           <div class="card border-0 shadow rounded-3 my-5" style="background-color: #1c2f3ecf;">
             <div class="card-body p-4 p-sm-5" >
               <h5 class="card-title text-center mb-5 fw-light fs-5 text-light">Iniciar sesión</h5>
-              <form>
+              <form id="loginForm" method="post" action="">
                 <div class="form-floating mb-3">
                   <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                   <label for="floatingInput">Correo electrónico</label>
@@ -38,7 +39,7 @@
                   </label>
                 </div>
                 <div class="d-grid">
-                  <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Iniciar sesión</button>
+                  <button class="btn btn-primary btn-login text-uppercase fw-bold" id="btnLogin" type="submit">Iniciar sesión</button>
                 </div>
                 <hr class="my-4">
                 <div class="d-grid mb-2">
@@ -58,4 +59,5 @@
       </div>
     </div>
   </body>
+  <script src="js/login.js"></script>
 </html>

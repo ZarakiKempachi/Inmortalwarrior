@@ -251,7 +251,7 @@
                             <div class="form-group d-flex row justify-content-center align-items-center my-2">
                                 <span class="col-md-1 col-lg-1 col-sm-1 col-1 col-xl-1 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
                                 <div class="col-md-8 col-lg-10 col-sm-8 col-8 col-xl-9">
-                                    <input id="email" name="email" type="email" placeholder="Dirección de correo electrónico" class="form-control" required>
+                                    <input id="emailAlumno" name="email" type="email" placeholder="Dirección de correo electrónico" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group d-flex row justify-content-center align-items-center my-2">
@@ -268,12 +268,12 @@
                                         <?php
                                         include 'CRUD/Conexion.php';
                                         $conexion = mysqli_connect($server, $user, $pass, $db);
-                                        $sql = "SELECT * FROM box";
+                                        $sql = "SELECT * FROM boxes";
                                         $resultado = mysqli_query($conexion, $sql);
                                         $ubicacionAnterior = "";
                                         while ($row = mysqli_fetch_assoc($resultado)) {
-                                            if ($row['	Localidad'] != $ubicacionAnterior) {
-                                                echo "<option value='" . $row['	Localidad'] . "'>" . $row['	Localidad'] . "</option>";
+                                            if ($row['Localidad'] != $ubicacionAnterior) {
+                                                echo "<option value='" . $row['Localidad'] . "'>" . $row['Localidad'] . "</option>";
                                             }
                                             $ubicacionAnterior = $row['	Localidad'];
                                         }
@@ -286,7 +286,7 @@
                             <div class="form-group d-flex row justify-content-center align-items-center my-2">
                                 <span class="col-md-1 col-lg-1 col-sm-1 col-1 col-xl-1 text-center"><i class="fa fa-home bigicon"></i></span>
                                 <div class="col-md-8 col-lg-10 col-sm-8 col-8 col-xl-9">
-                                    <select class="form-select" name="box" id="centros" aria-label="Default select example">
+                                    <select class="form-select" name="box" id="boxes" aria-label="Default select example">
                                         <option selected>Selecciona tu Box</option>
                                         <!-- Realizar peticion por ajax en base a la provincia seleccionada con un evento change / click -->
                                     </select>
@@ -294,7 +294,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12 mt-4 mb-2 text-center">
-                                    <button type="submit" class="btn botonesLanding btn-light btn-lg">Registrarse</button>
+                                    <button type="submit" id="formularioRegistroAlumnos" class="btn botonesLanding btn-light btn-lg">Registrarse</button>
                                 </div>
                             </div>
                         </fieldset>
