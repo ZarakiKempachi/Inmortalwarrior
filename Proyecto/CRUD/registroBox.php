@@ -21,7 +21,7 @@ try {
             throw new Exception("Error de conexión a la base de datos: " . mysqli_connect_error());
         }
 
-        $sql1 = "INSERT INTO boxes (Nombre, Direccion, Localidad, Correo, Telefono, Descripcion, Horario) VALUES ('$nombreBox','$dirBox','$localidadBox','$correoBox','$telefonoBox','$descripcionBox','$horarioBox')";
+        $sql1 = "INSERT INTO boxes (Nombre, Direccion, Localidad, Email, Telefono, Descripcion, Horario) VALUES ('$nombreBox','$dirBox','$localidadBox','$correoBox','$telefonoBox','$descripcionBox','$horarioBox')";
         
         if (!$conexion->query($sql1)) {
             throw new Exception("Error al insertar datos en la tabla 'boxes': " . $conexion->error);
