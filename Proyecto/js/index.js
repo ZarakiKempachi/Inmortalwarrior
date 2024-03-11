@@ -77,6 +77,7 @@ $(document).ready(function () {
         let uname = $('#username').val();
         let emailAlumno = $('#emailAlumno').val();
         let passAdmin = $('#password').val();
+        let idBox = $('#boxes').val();
     
     // Realizar la solicitud AJAX
     $.ajax({
@@ -88,6 +89,7 @@ $(document).ready(function () {
             uname: uname,
             emailAlumno: emailAlumno,
             passAdmin: passAdmin,
+            idBox: idBox
         },
         success: function (response) {
             swal({
@@ -95,6 +97,12 @@ $(document).ready(function () {
                 text: response,
                 icon: "success",
             });
+         $('#fname').val("");
+        $('#lname').val("");
+        $('#username').val("");
+        $('#emailAlumno').val("");
+        $('#password').val("");
+        $('#boxes').val("");
         },
         error: function (error) {
             // Manejar errores en la solicitud AJAX
@@ -106,17 +114,24 @@ $(document).ready(function () {
         
     });
 
-    $("#ciudades").change(function () {
-        let boxSeleccionado = $("#ciudades").val();
-        $.ajax({
-          url: "../back/CRUD/boxes.php",
-          type: "POST",
-          data: { box: boxSeleccionado },
-          success: function (respuesta) {
-            let response =
-              "<option selected>Selecciona tu Box</option>" + respuesta;
-            $("#clases").html(response);
-          },
+    $(document).ready(function(){
+        // Manejar el evento de cambio en el primer select (ciudades)
+        $("#ciudades").change(function(){
+            let ciudadSeleccionada = $(this).val();
+            
+            // Realizar una solicitud AJAX para obtener las cajas de la ciudad seleccionada
+            $.ajax({
+                type: "POST",  // Puedes ajustar esto según tu necesidad
+                url: "../CRUD/boxes.php",  // Ajusta la URL según tu estructura
+                data: { ciudad: ciudadSeleccionada },
+                success: function(response){
+                    // Limpiar y agregar las nuevas opciones al segundo select (boxes)
+                    $("#boxes").empty().append(response);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error en la solicitud AJAX:", status, error);
+                }
+            });
         });
-      });
+    });
 }); 

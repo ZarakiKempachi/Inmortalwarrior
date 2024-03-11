@@ -1,27 +1,35 @@
 $(document).ready(function(){
     $(document).on('click', '#btnLogin', function (e) {
         e.preventDefault();
-        e.preventDefault();
 
         // Obtener los datos del formulario
-        let email = $('#floatingInput').val();
-        let password = $('#floatingPassword').val();
+        let username = $('#nombreLogin').val();
+        let password = $('#passLogin').val();
 
         // Realizar la solicitud AJAX
         $.ajax({
             type: "POST",
             url: "../CRUD/iniciarSesion.php", 
+            dataType: "json",
             data: {
-                email: email,
+                username: username,
                 password: password
             },
             success: function(response){
                 if (response === "success") {
                     // Redirigir o realizar acciones necesarias después del inicio de sesión exitoso
-                    alert("Inicio de sesión exitoso");
+                    swal({
+                        title: "Box accepted!",
+                        text: response,
+                        icon: "success",
+                    });
+                    window.location.href = "inicio.php";
                 } else {
                     // Mostrar mensaje de error
-                    alert("Error en el inicio de sesión: " + response);
+                    swal({
+                        title: "Contraseña incorrecta!",                        
+                        icon: "warning",
+                    });
                 }
             },
             error: function(error){
