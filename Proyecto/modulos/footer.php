@@ -28,6 +28,6 @@
         </div>
 
     </body>
-    <script src="../js/index.js"></script>
+   
 
 </html>
