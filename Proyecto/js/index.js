@@ -1,10 +1,10 @@
 //Registro de box
 $(document).ready(function () {
-    // Manejar el envío del formulario usando AJAX
+    // Handle form submission using AJAX
     $(document).on('click', '#formularioRegistro', function (e) {
-        e.preventDefault(); // Evitar que el formulario se envíe normalmente
+        e.preventDefault(); // Prevent the form from submitting normally
         
-        // Obtener los valores del formulario
+        // Get the values from the form
         let nombreBox = $('#nombreBox').val();
         let dirBox = $('#dirBox').val();
         let localidadBox = $('#localidadBox').val();
@@ -16,7 +16,8 @@ $(document).ready(function () {
         let lname1 = $('#lname1').val();
         let uname = $('#uname').val();
         let passAdmin = $('#passAdmin').val();
-        // Realizar la solicitud AJAX
+        
+        // Make an AJAX request
         $.ajax({
             type: "POST",
             url: "../CRUD/registroBox.php",
@@ -33,36 +34,37 @@ $(document).ready(function () {
                 uname: uname,
                 passAdmin: passAdmin,
             },
-
             success: function (response) {
                 swal({
-                    title: "Box aceptado!",
+                    title: "Box accepted!",
                     text: response,
                     icon: "success",
                 });
-                $('#nombreBox').html("");
-                $('#dirBox').html("");
-                $('#localidadBox').html("");
-                $('#emailBox').html("");
-                $('#tlfnBox').html("");
-                $('#descripcionBox').html("");
-                $('#horarioBox').html("");
-                $('#firstname').html("");
-                $('#lname1').html("");
-                $('#uname').html("");
-                $('#passAdmin').html("");
+                
+                // Clear the form fields
+                $('#nombreBox').val("");
+                $('#dirBox').val("");
+                $('#localidadBox').val("");
+                $('#emailBox').val("");
+                $('#tlfnBox').val("");
+                $('#descripcionBox').val("");
+                $('#horarioBox').val("");
+                $('#firstname').val("");
+                $('#lname1').val("");
+                $('#uname').val("");
+                $('#passAdmin').val("");
             },
-            error: function (error) {
-                // Manejar errores en la solicitud AJAX
-                console.log(error.responseText);
-                alert("Error en el registro");
-            },
-            
-             
+            error: function (xhr, status, error) {
+                swal({
+                    title: "Error",
+                    text: "An error occurred while submitting the form.",
+                    icon: "error",
+                });
+            }
         });
-        
     });
 });
+
 
 //Registro alumnos
 $(document).ready(function () {
@@ -104,8 +106,8 @@ $(document).ready(function () {
         
     });
 
-    $("#boxes").change(function () {
-        let boxSeleccionado = $("#boxes").val();
+    $("#ciudades").change(function () {
+        let boxSeleccionado = $("#ciudades").val();
         $.ajax({
           url: "../back/CRUD/boxes.php",
           type: "POST",

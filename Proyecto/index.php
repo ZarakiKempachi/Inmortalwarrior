@@ -228,7 +228,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal" method="post" action="CRUD/registro.php">
+                    <form class="form-horizontal" method="post" action="">
                         <fieldset>
                             <div class="form-group d-flex row justify-content-center align-items-center my-2">
                                 <span class="col-md-1 col-lg-1 col-sm-1 col-1 col-xl-1 text-center"><i class="fa fa-user bigicon"></i></span>
@@ -288,7 +288,7 @@
                                 <div class="col-md-8 col-lg-10 col-sm-8 col-8 col-xl-9">
                                     <select class="form-select" name="box" id="boxes" aria-label="Default select example">
                                         <option selected>Selecciona tu Box</option>
-                                        <!-- Realizar peticion por ajax en base a la provincia seleccionada con un evento change / click -->
+                                        
                                     </select>
                                 </div>
                             </div>
