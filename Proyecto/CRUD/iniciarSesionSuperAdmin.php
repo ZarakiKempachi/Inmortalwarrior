@@ -3,8 +3,6 @@ include 'conexion.php';
 
 // Inicializar la respuesta como un array asociativo
 $response = array();
-
-// Manejar el inicio de sesión del usuario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
