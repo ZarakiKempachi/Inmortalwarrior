@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,13 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- Script JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
-<script src="js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <script src="js/index.js"></script>
 
 
-<!-- Librerias -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Librerias -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Registro</title>
 </head>
 
@@ -27,13 +26,13 @@
                 <img src="img/logo_bueno.jpg" width="40px">
             </a>
             <div>
-                
-                    <a href="login.php" class="ini-sesion">
-                        <img src="img/usuario.png" alt="">
-                        Iniciar sesión
-                    </a>
-                
-                
+
+                <a href="login.php" class="ini-sesion">
+                    <img src="img/usuario.png" alt="">
+                    Iniciar sesión
+                </a>
+
+
             </div>
         </div>
     </nav>
@@ -90,32 +89,32 @@
         </div>
     </section>
     <section class="mainSection d-flex mb-4">
-            <div class="container">
-                <div class="d-flex row justify-content-center my-2">
-                    <!-- Tarjeta 1: Nuevo Administrador -->
-                    <div class="col-md-4 tarjetasLanding my-2">
-                        <div class="card h-100 shadow-lg p-3 mb-5 bg-white rounded">
-                            <img src="img/box8.jpg" class="card-img-top" alt="Imagen Administrador">
-                            <div class="card-body text-center">
-                                <h4 class="titulo_cards_mains card-title">ÚNETE COMO BOX</h4>
-                                <a href="#" class="btn btn-light botonesLanding stretched-link" data-bs-toggle="modal" data-bs-target="#contactModal">Contáctanos</a>
-                            </div>
+        <div class="container">
+            <div class="d-flex row justify-content-center my-2">
+                <!-- Tarjeta 1: Nuevo Administrador -->
+                <div class="col-md-4 tarjetasLanding my-2">
+                    <div class="card h-100 shadow-lg p-3 mb-5 bg-white rounded">
+                        <img src="img/box8.jpg" class="card-img-top" alt="Imagen Administrador">
+                        <div class="card-body text-center">
+                            <h4 class="titulo_cards_mains card-title">ÚNETE COMO BOX</h4>
+                            <a href="#" class="btn btn-light botonesLanding stretched-link" data-bs-toggle="modal" data-bs-target="#contactModal">Contáctanos</a>
                         </div>
                     </div>
-                    <!-- Tarjeta 2: Nuevo Alumno -->
-                    <div class="col-md-4 tarjetasLanding my-2">
-                        <div class="card h-100 shadow-lg p-3 mb-5 bg-white rounded">
-                            <img src="img/OIP (2).jpg" class="card-img-top" alt="Imagen Alumno">
-                            <div class="card-body text-center">
-                                <h4 class="titulo_cards_mains card-title">REGISTRO DE ATLETAS</h4>
-                                <a href="#" class="btn btn-light botonesLanding stretched-link" data-bs-toggle="modal" data-bs-target="#signupModal">Registrate</a>
-                            </div>
+                </div>
+                <!-- Tarjeta 2: Nuevo Alumno -->
+                <div class="col-md-4 tarjetasLanding my-2">
+                    <div class="card h-100 shadow-lg p-3 mb-5 bg-white rounded">
+                        <img src="img/OIP (2).jpg" class="card-img-top" alt="Imagen Alumno">
+                        <div class="card-body text-center">
+                            <h4 class="titulo_cards_mains card-title">REGISTRO DE ATLETAS</h4>
+                            <a href="#" class="btn btn-light botonesLanding stretched-link" data-bs-toggle="modal" data-bs-target="#signupModal">Registrate</a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
-   
+
     <!-- modal registro admin de box -->
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -125,7 +124,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body d-flex justify-content-center align-items-center w-100 col-lg-10">
-                    <form class="form-horizontal" id="contactForm"  method="post" action="">
+                    <form class="form-horizontal" id="contactForm" method="post" action="">
                         <fieldset>
                             <div class="mx-4 mt-1 mb-2">
                                 <h5>Datos del BOX:</h5>
@@ -169,7 +168,7 @@
                             <div class="form-group d-flex row justify-content-center align-items-center my-2">
                                 <span class="col-md-1 col-lg-1 col-sm-1 col-1 col-xl-1 text-center"><i class="fa "></i></span>
                                 <div class="col-md-8 col-lg-10 col-sm-8 col-8 col-xl-9">
-                                    <input id="horarioBox" name="horarioBox" type="text" placeholder="Horario" class="form-control"  required></input>
+                                    <input id="horarioBox" name="horarioBox" type="text" placeholder="Horario" class="form-control" required></input>
                                 </div>
                             </div>
 
@@ -279,7 +278,7 @@
                                             $ubicacionAnterior = $row['	Localidad'];
                                         }
                                         ?>
-                                        
+
                                     </select>
                                 </div>
                             </div>
@@ -289,7 +288,7 @@
                                 <div class="col-md-8 col-lg-10 col-sm-8 col-8 col-xl-9">
                                     <select class="form-select" name="box" id="boxes" aria-label="Default select example">
                                         <option selected>Selecciona tu Box</option>
-                                        
+
                                     </select>
                                 </div>
                             </div>

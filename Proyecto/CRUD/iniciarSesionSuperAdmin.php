@@ -3,6 +3,8 @@ include 'conexion.php';
 
 // Inicializar la respuesta como un array asociativo
 $response = array();
+
+// Manejar el inicio de sesión del usuario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -13,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $hashAlmacenado = $row['Password'];
+        $hashAlmacenado = $row['password'];
 
         // Verificar la contraseña proporcionada con el hash almacenado
         if (password_verify($password, $hashAlmacenado)) {

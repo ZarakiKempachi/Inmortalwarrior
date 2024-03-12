@@ -144,3 +144,47 @@ $(document).ready(function () {
             });
         });
     });
+//Registro del superadmin
+    // $(document).ready(function () {
+    //     // Manejar el envío del formulario usando AJAX
+    //     $(document).on('click', '#formulariosuperAdmin', function (e) {
+    //         e.preventDefault();
+    //         // Obtener los valores del formulario
+    //         let uname = $('#superadminUsername').val();
+    //         let passAdmin = $('#superadminPassword').val();
+    
+    //         // Realizar la solicitud AJAX
+    //         $.ajax({
+    //             type: "POST",
+    //             url: "../CRUD/registroSuperadmin.php",
+    //             data: {
+    //                 uname: uname,
+    //                 passAdmin: passAdmin
+    //             },
+    //             success: function (response) {
+    //                 if (response.includes("Superadmin registrado")) {
+    //                     swal({
+    //                         title: "Superadmin aceptado!",
+    //                         text: response,
+    //                         icon: "success",
+    //                     });
+    //                     $('#superadminUsername').val("");
+    //                     $('#superadminPassword').val("");
+    //                 } else {
+    //                     // Mostrar SweetAlert de advertencia si el superadmin ya existe
+    //                     swal({
+    //                         title: "Superadmin existente!",
+    //                         text: "El superadmin ya existe, por favor, elija otro nombre de usuario",
+    //                         icon: "warning",
+    //                     });
+    //                 }
+    //             },
+    //             error: function (error) {
+    //                 // Manejar errores en la solicitud AJAX
+    //                 console.log(error.responseText);
+    //                 alert("Error en el registro del superadmin");
+    //             }
+    //         });
+    //     });
+    // });
+    
