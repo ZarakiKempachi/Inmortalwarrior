@@ -57,6 +57,9 @@
                     <li class="nav-item">
                         <a href="eventos.php" class="nav-link text-dark">Eventos</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="../adminInmortal/panelAdministracion.php" class="nav-link text-dark">Eventos</a>
+                    </li>
                 </ul>
             </div>
                 <a class="nav-item dropdown pe-3">
