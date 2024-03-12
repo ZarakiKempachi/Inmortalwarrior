@@ -78,41 +78,51 @@ $(document).ready(function () {
         let emailAlumno = $('#emailAlumno').val();
         let passAdmin = $('#password').val();
         let idBox = $('#boxes').val();
-    
-    // Realizar la solicitud AJAX
-    $.ajax({
-        type: "POST",
-        url: "../CRUD/registroAlumno.php",
-        data: {
-            firstname: firstname,
-            lname: lname,
-            uname: uname,
-            emailAlumno: emailAlumno,
-            passAdmin: passAdmin,
-            idBox: idBox
-        },
-        success: function (response) {
-            swal({
-                title: "Usuario aceptado!",
-                text: response,
-                icon: "success",
-            });
-         $('#fname').val("");
-        $('#lname').val("");
-        $('#username').val("");
-        $('#emailAlumno').val("");
-        $('#password').val("");
-        $('#boxes').val("");
-        },
-        error: function (error) {
-            // Manejar errores en la solicitud AJAX
-            console.log(error.responseText);
-            alert("Error en el registro");
-        }
 
+        // Realizar la solicitud AJAX
+        $.ajax({
+            type: "POST",
+            url: "../CRUD/registroAlumno.php",
+            data: {
+                firstname: firstname,
+                lname: lname,
+                uname: uname,
+                emailAlumno: emailAlumno,
+                passAdmin: passAdmin,
+                idBox: idBox
+            },
+            success: function (response) {
+                if (response.includes("Usuario registrado")) {
+                    swal({
+                        title: "Usuario aceptado!",
+                        text: response,
+                        icon: "success",
+                    });
+                    $('#fname').val("");
+                    $('#lname').val("");
+                    $('#username').val("");
+                    $('#emailAlumno').val("");
+                    $('#password').val("");
+                    $('#boxes').val("");
+                } else {
+                    // Mostrar SweetAlert de advertencia si el usuario ya existe
+                    swal({
+                        title: "Usuario existente!",
+                        text: "El usuario ya existe, por favor, elija otro nombre de usuario",
+                        icon: "warning",
+                    });
+                }
+            },
+            error: function (error) {
+                // Manejar errores en la solicitud AJAX
+                console.log(error.responseText);
+                alert("Error en el registro");
+            }
+
+        });
     });
-        
-    });
+});
+
 
     $(document).ready(function(){
         // Manejar el evento de cambio en el primer select (ciudades)
@@ -134,4 +144,3 @@ $(document).ready(function () {
             });
         });
     });
-}); 

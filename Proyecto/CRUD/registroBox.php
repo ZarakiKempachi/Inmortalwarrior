@@ -29,7 +29,7 @@ try {
 
         $idBox = $conexion->insert_id;
         $passwd = password_hash($passAdmin, PASSWORD_DEFAULT);
-        $sql2 = "INSERT INTO usuarios (Nombre, Apellido, Email,Username, `Password`,Fecha_Creacion,foto,Is_Admin,Is_Instructor, ID_Boxes) VALUES ( '$nombreAdmin','$apellidosAdmin', '$correoBox', '$userNameAdmin', '$passwd',NOW(),'',1,1,$idBox)";
+        $sql2 = "INSERT INTO usuarios (Nombre, Apellido, Email,Username, `Password`,Fecha_Creacion,foto,Is_Admin,Is_Instructor, ID_Boxes) VALUES ( '$nombreAdmin','$apellidosAdmin', '$correoBox', '$userNameAdmin', '$passwd',NOW(),'',1,0,$idBox)";
         
         if (!$conexion->query($sql2)) {
             throw new Exception("Error al insertar datos en la tabla 'usuarios': " . $conexion->error);

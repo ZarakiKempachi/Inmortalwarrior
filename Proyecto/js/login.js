@@ -16,14 +16,26 @@ $(document).ready(function(){
                 password: password
             },
             success: function(response){
-                if (response === "success") {
-                    // Redirigir o realizar acciones necesarias después del inicio de sesión exitoso
-                    
-                    window.location.href = "inicio.php";
+                if (response.status === "success") {
+                    // Verificar el tipo de usuario y redirigir según el tipo
+                    switch (response.userType) {
+                        case 'admin':
+                            window.location.href = "wods.php";
+                            break;
+                        case 'atleta':
+                            window.location.href = "inicio.php";
+                            break;
+                        default:
+                            // Tipo de usuario no reconocido
+                            swal({
+                                title: "Tipo de usuario no reconocido!",
+                                icon: "error",
+                            });
+                    }
                 } else {
                     // Mostrar mensaje de error
                     swal({
-                        title: "Contraseña incorrecta!",                        
+                        title: "Contraseña incorrecta!",
                         icon: "warning",
                     });
                 }
@@ -35,3 +47,4 @@ $(document).ready(function(){
         });
     });
 });
+
