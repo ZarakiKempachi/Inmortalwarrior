@@ -94,20 +94,20 @@
                 <!-- Tarjeta 1: Nuevo Administrador -->
                 <div class="col-md-4 tarjetasLanding my-2">
                     <div class="card h-100 shadow-lg p-3 mb-5 bg-white rounded">
-                        <img src="img/box8.jpg" class="card-img-top" alt="Imagen Administrador">
+                    <h4 class="titulo_cards_mains card-title text-center">ÚNETE COMO BOX</h4>
+                        <img src="img/box7.jpg" class="card-img-top" alt="Imagen Administrador">
                         <div class="card-body text-center">
-                            <h4 class="titulo_cards_mains card-title">ÚNETE COMO BOX</h4>
-                            <a href="#" class="btn btn-light botonesLanding stretched-link" data-bs-toggle="modal" data-bs-target="#contactModal">Contáctanos</a>
+                            <a href="#" class="btnGlobal btn stretched-link" data-bs-toggle="modal" data-bs-target="#contactModal">Contáctanos</a>
                         </div>
                     </div>
                 </div>
                 <!-- Tarjeta 2: Nuevo Alumno -->
                 <div class="col-md-4 tarjetasLanding my-2">
                     <div class="card h-100 shadow-lg p-3 mb-5 bg-white rounded">
+                        <h4 class="titulo_cards_mains card-title text-center">REGISTRO DE ATLETAS</h4>
                         <img src="img/OIP (2).jpg" class="card-img-top" alt="Imagen Alumno">
                         <div class="card-body text-center">
-                            <h4 class="titulo_cards_mains card-title">REGISTRO DE ATLETAS</h4>
-                            <a href="#" class="btn btn-light botonesLanding stretched-link" data-bs-toggle="modal" data-bs-target="#signupModal">Registrate</a>
+                            <a href="#" class="btnGlobal btn stretched-link" data-bs-toggle="modal" data-bs-target="#signupModal">Registrate</a>
                         </div>
                     </div>
                 </div>

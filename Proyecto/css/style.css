@@ -388,3 +388,33 @@ align-items: center;
   margin: 0px; 
   transform: translate3d(-16px, 38px, 0px);
 }
+
+/*--------------------------------------------------------------
+# Btn
+--------------------------------------------------------------*/
+.btnGlobal{
+  background-color: #2b3035 !important;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.btnGlobal:hover{
+  background-color: #4d4d4d !important;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

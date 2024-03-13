@@ -5,16 +5,16 @@
                     <!-- Section: Social media -->
                     <section >
                         <!-- Contacta -->
-                        <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1 icono-social" href="index.php?pagina=Modulos/componentes/php/contacto.php" role="button" data-mdb-ripple-color="dark"><i class="far fa-envelope"></i></a>
+                        <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1 icono-social" href="contacto.php" role="button" data-mdb-ripple-color="dark"><i class="far fa-envelope"></i></a>
 
                         <!-- Twitter -->
-                        <a data-mdb-ripple-init target="_blank" class="btn btn-link btn-floating btn-lg text-body m-1 icono-social" href="https://x.com/GameItEIG?t=coihEHxHAY7dTsgwYarmBw&s=08" role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
+                        <a data-mdb-ripple-init target="_blank" class="btn btn-link btn-floating btn-lg text-body m-1 icono-social" href="https://twitter.com/MonkeyDAbraxas" role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
 
                         <!-- Instagram -->
-                        <a data-mdb-ripple-init target="_blank" class="btn btn-link btn-floating btn-lg text-body m-1 icono-social" href="https://www.instagram.com/gameit_eig/" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+                        <a data-mdb-ripple-init target="_blank" class="btn btn-link btn-floating btn-lg text-body m-1 icono-social" href="https://www.instagram.com/inmortalWarriors.app/" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
 
                         <!-- Linkedin -->
-                        <a data-mdb-ripple-init target="_blank" class="btn btn-link btn-floating btn-lg text-body m-1 icono-social" href="https://www.linkedin.com/in/game-it" role="button" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+                        <a data-mdb-ripple-init target="_blank" class="btn btn-link btn-floating btn-lg text-body m-1 icono-social" href="https://www.linkedin.com/in/alex-cortes-ronda/" role="button" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
                     </section>
                     <!-- Section: Social media -->
                 </div>
