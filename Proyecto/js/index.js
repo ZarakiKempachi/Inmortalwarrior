@@ -36,7 +36,7 @@ $(document).ready(function () {
             },
             success: function (response) {
                 swal({
-                    title: "Box accepted!",
+                    title: "Solicitud enviada!",
                     text: response,
                     icon: "success",
                 });

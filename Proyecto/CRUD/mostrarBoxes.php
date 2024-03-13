@@ -26,7 +26,7 @@ foreach ($boxes as $box) {
     echo '<td>' . $box['Email'] . '</td>';
     echo '<td>' . $box['Localidad'] . '</td>';
     echo '<td>' . $box['Horario'] . '</td>';
-    echo '<td><button id="borrarBox" class="btn">Borrar</button></td>';
+    echo '<td><button class="borrarBox " data-id="' . $box['ID_Boxes'] . '">Borrar</button></td>'; // Estableciendo el valor de data-id dinámicamente
     echo '</tr>';
 }
 echo '</tbody>';
@@ -49,5 +49,4 @@ function obtenerBoxes(){
 
     return $boxes;
 }
-
 ?>

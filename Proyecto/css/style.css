@@ -418,7 +418,7 @@ align-items: center;
   margin: 4px 2px;
   cursor: pointer;
 }
-#borrarBox, #borrarUsuario{
+.borrarBox, .borrarUsuario{
   background-color: #ff0000 !important;
   color: white;
   border: none;

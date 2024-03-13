@@ -26,7 +26,7 @@ foreach ($usuarios as $usuario) {
     echo '<td>' . $usuario['Email'] . '</td>';
     echo '<td>' . $usuario['Fecha_Creacion'] . '</td>';
     echo '<td>' . $usuario['nombre_box'] . '</td>';
-    echo '<td><button class="btn borrarUsuario" data-id="' . $usuario['ID_Usuario'] . '">Borrar</button></td>';
+    echo '<td><button class="borrarUsuario" data-id="' . $usuario['ID_Usuario'] . '">Borrar</button></td>';
 
     echo '</tr>';
 }

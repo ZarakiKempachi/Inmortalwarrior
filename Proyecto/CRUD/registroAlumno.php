@@ -9,35 +9,32 @@ require '../CRUD/PHPMailer/src/Exception.php';
 require '../CRUD/PHPMailer/src/PHPMailer.php';
 require '../CRUD/PHPMailer/src/SMTP.php';
 
-function enviarCorreoAceptacionAlumno($correo, $nombre, $usuario,  $aceptado)
+function enviarCorreoAceptacionAlumno($email, $nombre, $usuario, $aceptado)
 {
-    $mail = new PHPMailer();
-
-    // Configuración del servidor SMTP
-    $mail->isSMTP();
-    $mail->Host       = 'smtp.gmail.com';
-    $mail->Port       = 465;  // Puerto SSL
-    $mail->SMTPSecure = 'ssl';
-    $mail->SMTPAuth   = true;
-
-    // Credenciales de correo electrónico
-    $mail->Username   = 'inmortalwarriors.app@gmail.com';
-    $mail->Password   = 'ihrr qtqk sorc ddyz';
-
-    // Resto de la configuración del correo
-
-    $mail->setFrom('inmortalwarriors.app', 'Inmortal Warriors');
-    $mail->addAddress($correo, $nombre);
-    $mail->isHTML(true);
-    $mail->CharSet = 'UTF-8';
+    $mail = new PHPMailer(true); // Habilita excepciones
 
     try {
+        // Configuración del servidor SMTP
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';
+        $mail->Port       = 465;  
+        $mail->SMTPSecure = 'ssl';
+        $mail->SMTPAuth   = true;
+
+        // Credenciales de correo electrónico
+        $mail->Username   = 'inmortalwarriors.app@gmail.com';
+        $mail->Password   = 'vcmb gcgv live nzim';
+
+        // Resto de la configuración del correo
+        $mail->setFrom('inmortalwarriors.app@gmail.com', 'Inmortal Warriors');
+        $mail->addAddress($email, $nombre);
+        $mail->isHTML(true);
+        $mail->CharSet = 'UTF-8';
+
         if ($aceptado) {
             $mail->Subject = 'Aprobación de solicitud de usuario';
-            
             $mail->Body    = "
             <div style='text-align: center;'>
-            
                 <h2>Felicidades, $nombre, bienvenido a Inmortal Warriors.</h2>
                 <p>Te has registrado correctamente con el usuario:<strong> $usuario</strong></p>
                 <p>Ya puedes acceder a tu cuenta en nuestro sistema.</p>
@@ -51,12 +48,15 @@ function enviarCorreoAceptacionAlumno($correo, $nombre, $usuario,  $aceptado)
 
         // Enviar el correo
         $mail->send();
+        return "Correo electrónico enviado con éxito";
 
-        
     } catch (Exception $e) {
-         $mail->ErrorInfo;
+        // Captura cualquier excepción y devuelve el mensaje de error
+        return "Error al enviar el correo electrónico: " . $e->getMessage();
     }
 }
+
+
 $username = $_REQUEST['uname'];
 $nombre = $_REQUEST['firstname'];
 $apellidos = $_REQUEST['lname'];
@@ -100,6 +100,9 @@ function registro($username, $nombre, $apellidos, $email, $passwd, $id_box)
     mysqli_close($conexion);
 }
 
+// Registrar usuario
 registro($username, $nombre, $apellidos, $email, $passwd, $id_box);
-enviarCorreoAceptacionAlumno($email, $nombre, $username,  true);
+
+// Enviar correo electrónico
+echo enviarCorreoAceptacionAlumno($email, $nombre, $username,  true);
 ?>

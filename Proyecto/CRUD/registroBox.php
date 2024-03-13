@@ -40,7 +40,7 @@ try {
 
     registroBox($nombreBox, $dirBox, $localidadBox, $correoBox, $telefonoBox, $descripcionBox, $horarioBox, $nombreAdmin, $apellidosAdmin, $userNameAdmin, $passAdmin);
 
-    echo "Registro exitoso";
+    echo "El administrador aprobará su solicitud en breve. Gracias por su paciencia.";
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
 }

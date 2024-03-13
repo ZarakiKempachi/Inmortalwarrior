@@ -1,13 +1,11 @@
 <?php
-include 'conexion.php'; // Incluye el archivo de conexión a la base de datos
+include 'conexion.php'; 
 
-// Verifica si se ha enviado el formulario para borrar un usuario
+
 if (isset($_POST['id_usuario'])) {
-    // Obtiene el ID del usuario desde el formulario
-    $idUsuario = $_POST['id_usuario'];
+    $idUsuario = $conexion->real_escape_string($_POST['id_usuario']);
 
     try {
-        // Ejecuta una sentencia SQL DELETE para eliminar el usuario
         $sql = "DELETE FROM usuarios WHERE ID_Usuario = $idUsuario";
         if ($conexion->query($sql) === TRUE) {
             // Envía una respuesta exitosa
@@ -25,7 +23,6 @@ if (isset($_POST['id_usuario'])) {
     $response = array("success" => false, "message" => "No se recibió el ID del usuario.");
 }
 
-// Cierra la conexión a la base de datos
 $conexion->close();
 
 // Devuelve la respuesta como JSON
