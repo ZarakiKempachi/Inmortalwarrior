@@ -1,4 +1,62 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../CRUD/PHPMailer/src/Exception.php';
+require '../CRUD/PHPMailer/src/PHPMailer.php';
+require '../CRUD/PHPMailer/src/SMTP.php';
+
+function enviarCorreoAceptacionAlumno($correo, $nombre, $usuario,  $aceptado)
+{
+    $mail = new PHPMailer();
+
+    // Configuración del servidor SMTP
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.gmail.com';
+    $mail->Port       = 465;  // Puerto SSL
+    $mail->SMTPSecure = 'ssl';
+    $mail->SMTPAuth   = true;
+
+    // Credenciales de correo electrónico
+    $mail->Username   = 'inmortalwarriors.app@gmail.com';
+    $mail->Password   = 'ihrr qtqk sorc ddyz';
+
+    // Resto de la configuración del correo
+
+    $mail->setFrom('inmortalwarriors.app', 'Inmortal Warriors');
+    $mail->addAddress($correo, $nombre);
+    $mail->isHTML(true);
+    $mail->CharSet = 'UTF-8';
+
+    try {
+        if ($aceptado) {
+            $mail->Subject = 'Aprobación de solicitud de usuario';
+            
+            $mail->Body    = "
+            <div style='text-align: center;'>
+            
+                <h2>Felicidades, $nombre, bienvenido a Inmortal Warriors.</h2>
+                <p>Te has registrado correctamente con el usuario:<strong> $usuario</strong></p>
+                <p>Ya puedes acceder a tu cuenta en nuestro sistema.</p>
+                <hr style='margin: 20px auto; width: 80%;'>
+                <p>Este es un mensaje automático. Por favor, no respondas a este correo.</p>
+            </div>";
+        } else {
+            $mail->Subject = 'Denegación de solicitud de usuario';
+            $mail->Body    = '<h2>Lamentamos informarte que tu solicitud ha sido denegada.</h2>';
+        }
+
+        // Enviar el correo
+        $mail->send();
+
+        
+    } catch (Exception $e) {
+         $mail->ErrorInfo;
+    }
+}
 $username = $_REQUEST['uname'];
 $nombre = $_REQUEST['firstname'];
 $apellidos = $_REQUEST['lname'];
@@ -43,4 +101,5 @@ function registro($username, $nombre, $apellidos, $email, $passwd, $id_box)
 }
 
 registro($username, $nombre, $apellidos, $email, $passwd, $id_box);
+enviarCorreoAceptacionAlumno($email, $nombre, $username,  true);
 ?>

@@ -418,3 +418,16 @@ align-items: center;
   margin: 4px 2px;
   cursor: pointer;
 }
+#borrarBox, #borrarUsuario{
+  background-color: #ff0000 !important;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

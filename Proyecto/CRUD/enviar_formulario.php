@@ -2,9 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'ruta/hacia/PHPMailer/src/Exception.php';
-require 'ruta/hacia/PHPMailer/src/PHPMailer.php';
-require 'ruta/hacia/PHPMailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST["nombre"];
@@ -16,16 +16,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         // Configuración del servidor SMTP
         $mail->isSMTP();
-        $mail->Host = 'tu.servidor.smtp';
+        $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'tu@correo.com';
-        $mail->Password = 'tucontraseña';
+        $mail->Username = 'inmortalwarriors.app@gmail.com';
+        $mail->Password = 'ihrr qtqk sorc ddyz';
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
         // Destinatario y remitente
         $mail->setFrom($email, $nombre);
-        $mail->addAddress('tudireccion@correo.com');
+        $mail->addAddress('inmortalwarriors.app@gmail.com', 'Inmortal Warriors');
 
         // Contenido del correo
         $mail->isHTML(true);
@@ -34,11 +34,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Enviar el correo electrónico
         $mail->send();
-        echo "<script>alert('El mensaje se ha enviado correctamente.');</script>";
+        echo 'Gracias por contactar con nosotros';
     } catch (Exception $e) {
         echo "<script>alert('Hubo un error al enviar el mensaje.');</script>";
         echo "Error de envío: {$mail->ErrorInfo}";
     }
 }
 ?>
+
 

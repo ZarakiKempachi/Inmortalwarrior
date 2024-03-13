@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Script JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/contacto.js"></script>
 
 
     <!-- Librerias -->
@@ -41,7 +41,7 @@
   <h1>Contacto</h1>
   <p>¡Estamos encantados de saber de ti! Por favor, completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.</p>
 
-  <form method="post" action="CRUD/enviar_formulario.php">
+  <form method="post" action="">
     <div class="form-group">
       <label for="nombre">Nombre</label>
       <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -54,7 +54,7 @@
       <label for="mensaje">Mensaje</label>
       <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+    <button type="submit" id="enviarCorreo" class="btn btn-primary">Enviar mensaje</button>
   </form>
 </div>
 
