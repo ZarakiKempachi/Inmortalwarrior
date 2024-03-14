@@ -21,6 +21,31 @@ try {
             throw new Exception("Error de conexión a la base de datos: " . mysqli_connect_error());
         }
 
+        // Verificar que el nombre del box no esté repetido
+        $checkBoxNameQuery = "SELECT * FROM boxes WHERE Nombre = '$nombreBox'";
+        $checkBoxNameResult = $conexion->query($checkBoxNameQuery);
+
+        if ($checkBoxNameResult->num_rows > 0) {
+            throw new Exception("El nombre del box ya está en uso");
+        }
+
+        // Verificar que el correo electrónico no esté repetido
+        $checkEmailQuery = "SELECT * FROM usuarios WHERE Email = '$correoBox'";
+        $checkEmailResult = $conexion->query($checkEmailQuery);
+
+        if ($checkEmailResult->num_rows > 0) {
+            throw new Exception("El correo electrónico ya está en uso");
+        }
+
+        // Verificar que el nombre de usuario del administrador no esté repetido
+        $checkAdminUsernameQuery = "SELECT * FROM usuarios WHERE Username = '$userNameAdmin'";
+        $checkAdminUsernameResult = $conexion->query($checkAdminUsernameQuery);
+
+        if ($checkAdminUsernameResult->num_rows > 0) {
+            throw new Exception("El nombre de usuario del administrador ya está en uso");
+        }
+
+        // Insertar datos en la base de datos si no hay errores
         $sql1 = "INSERT INTO boxes (Nombre, Direccion, Localidad, Email, Telefono, Descripcion, Horario,Is_Solicitud) VALUES ('$nombreBox','$dirBox','$localidadBox','$correoBox','$telefonoBox','$descripcionBox','$horarioBox',1)";
         
         if (!$conexion->query($sql1)) {
@@ -44,4 +69,6 @@ try {
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
 }
+
+
 ?>

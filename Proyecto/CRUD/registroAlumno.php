@@ -66,6 +66,8 @@ $id_box = $_REQUEST['idBox'];
 
 $email = $_REQUEST['emailAlumno'];
 
+$email = $_REQUEST['emailAlumno'];
+
 function registro($username, $nombre, $apellidos, $email, $passwd, $id_box)
 {
     include 'conexion.php';
@@ -82,27 +84,25 @@ function registro($username, $nombre, $apellidos, $email, $passwd, $id_box)
     $checkUsernameQuery = "SELECT * FROM usuarios WHERE Username = '$username'";
     $checkUsernameResult = $conexion->query($checkUsernameQuery);
 
-    if ($checkUsernameResult->num_rows > 0) {
-        echo json_encode("El nombre de usuario ya está en uso");
+    // Verificar que el correo electrónico no esté repetido
+    $checkEmailQuery = "SELECT * FROM usuarios WHERE Email = '$email'";
+    $checkEmailResult = $conexion->query($checkEmailQuery);
+
+    if ($checkUsernameResult->num_rows > 0 || $checkEmailResult->num_rows > 0) {
+        echo json_encode("El nombre de usuario o correo electrónico ya están en uso");
     } else {
-        // Verificar que el correo electrónico no esté repetido
-        $checkEmailQuery = "SELECT * FROM usuarios WHERE Email = '$email'";
-        $checkEmailResult = $conexion->query($checkEmailQuery);
+        // Insertar en la base de datos
+        $insertQuery = "INSERT INTO usuarios (Nombre, Apellido, Email, Username, `Password`, Fecha_Creacion, foto, Is_Admin, Is_Instructor, ID_Boxes) 
+                        VALUES ('$nombre', '$apellidos', '$email', '$username', '$passwd', NOW(), '', 0, 0, '$id_box')";
 
-        if ($checkEmailResult->num_rows > 0) {
-            echo json_encode("El correo electrónico ya está en uso");
+        $response = $conexion->query($insertQuery);
+
+        if ($response) {
+            // Enviar correo electrónico solo si es un usuario nuevo
+            enviarCorreoAceptacionAlumno($email, $nombre, $username, true);
+            echo json_encode("Usuario registrado");
         } else {
-            // Insertar en la base de datos
-            $insertQuery = "INSERT INTO usuarios (Nombre, Apellido, Email, Username, `Password`, Fecha_Creacion, foto, Is_Admin, Is_Instructor, ID_Boxes) 
-                            VALUES ('$nombre', '$apellidos', '$email', '$username', '$passwd', NOW(), '', 0, 0, '$id_box')";
-
-            $response = $conexion->query($insertQuery);
-
-            if ($response) {
-                echo json_encode("Usuario registrado");
-            } else {
-                echo json_encode("Error al registrar usuario: " . mysqli_error($conexion));
-            }
+            echo json_encode("Error al registrar usuario: " . mysqli_error($conexion));
         }
     }
 
@@ -113,7 +113,5 @@ function registro($username, $nombre, $apellidos, $email, $passwd, $id_box)
 // Registrar usuario
 registro($username, $nombre, $apellidos, $email, $passwd, $id_box);
 
-// Enviar correo electrónico
-echo enviarCorreoAceptacionAlumno($email, $nombre, $username,  true);
 
 ?>

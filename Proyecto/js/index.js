@@ -35,24 +35,45 @@ $(document).ready(function () {
                 passAdmin: passAdmin,
             },
             success: function (response) {
-                swal({
-                    title: "Solicitud enviada!",
-                    text: response,
-                    icon: "success",
-                });
-                
-                // Clear the form fields
-                $('#nombreBox').val("");
-                $('#dirBox').val("");
-                $('#localidadBox').val("");
-                $('#emailBox').val("");
-                $('#tlfnBox').val("");
-                $('#descripcionBox').val("");
-                $('#horarioBox').val("");
-                $('#firstname').val("");
-                $('#lname1').val("");
-                $('#uname').val("");
-                $('#passAdmin').val("");
+                // Check if the response contains an error message
+                if (response.includes("El nombre del box ya está en uso")) {
+                    swal({
+                        title: "Información",
+                        text: response,
+                        icon: "info",
+                    });
+                } else if (response.includes("El correo electrónico ya está en uso")) {
+                    swal({
+                        title: "Información",
+                        text: response,
+                        icon: "info",
+                    });
+                } else if (response.includes("El nombre de usuario del administrador ya está en uso")) {
+                    swal({
+                        title: "Información",
+                        text: response,
+                        icon: "info",
+                    });
+                } else {
+                    swal({
+                        title: "Solicitud enviada!",
+                        text: response,
+                        icon: "success",
+                    });
+                    
+                    // Clear the form fields
+                    $('#nombreBox').val("");
+                    $('#dirBox').val("");
+                    $('#localidadBox').val("");
+                    $('#emailBox').val("");
+                    $('#tlfnBox').val("");
+                    $('#descripcionBox').val("");
+                    $('#horarioBox').val("");
+                    $('#firstname').val("");
+                    $('#lname1').val("");
+                    $('#uname').val("");
+                    $('#passAdmin').val("");
+                }
             },
             error: function (xhr, status, error) {
                 swal({
@@ -64,6 +85,9 @@ $(document).ready(function () {
         });
     });
 });
+
+
+
 
 
 //Registro alumnos
