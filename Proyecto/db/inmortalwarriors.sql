@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-03-2024 a las 17:19:47
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.0.25
+-- Tiempo de generación: 14-03-2024 a las 09:56:35
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,15 +35,20 @@ CREATE TABLE `boxes` (
   `Email` varchar(255) NOT NULL,
   `Horario` varchar(255) NOT NULL,
   `Localidad` varchar(50) NOT NULL,
-  `Descripcion` varchar(255) NOT NULL
+  `Descripcion` varchar(255) NOT NULL,
+  `Foto` varchar(50) DEFAULT NULL,
+  `Is_Solicitud` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `boxes`
 --
 
-INSERT INTO `boxes` (`ID_Boxes`, `Nombre`, `Direccion`, `Telefono`, `Email`, `Horario`, `Localidad`, `Descripcion`) VALUES
-(1, 'dragon box', 'C/profesor motos guirao,2 local 1', 2147483647, 'alexcortesronda63@gmail.com', '8:00 a 21:00', 'Granada', 'aaaa');
+INSERT INTO `boxes` (`ID_Boxes`, `Nombre`, `Direccion`, `Telefono`, `Email`, `Horario`, `Localidad`, `Descripcion`, `Foto`, `Is_Solicitud`) VALUES
+(1, 'dragon box', 'C/profesor motos guirao,2 local 1', 2147483647, 'alexcortesronda63@gmail.com', '8:00 a 21:00', 'Granada', 'aaaa', '', 0),
+(12, 'Crossfit Altea', 'Calle almendras', 345345345, 'crossfitaltea@gmail.com', '6:00 - 21:00', 'Altea', 'asdasd', NULL, 0),
+(13, 'Animal Box', 'C/ Camino la huerta edf. la cruz II, 9 Local D 9', 2147483647, 'alexcortesronda63@gmail.com', '6:00 - 21:00', 'Granada', 'asadasd', NULL, 0),
+(14, 'mi bvo', 'C/profesor motos guirao,2 local 1', 2147483647, 'alexcortesronda63@gmail.com', '6:00 - 21:00', 'Granada', 'asdasd', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -96,8 +101,15 @@ CREATE TABLE `reservas` (
 CREATE TABLE `superadmin` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `superadmin`
+--
+
+INSERT INTO `superadmin` (`id`, `username`, `password`) VALUES
+(2, 'root', '$2y$10$gswsHQet31un5njV1zj4IesXme.uhOLgXYXPxMfD9DUXkXFXB2SVG');
 
 -- --------------------------------------------------------
 
@@ -111,7 +123,7 @@ CREATE TABLE `usuarios` (
   `Apellido` varchar(50) NOT NULL,
   `Email` varchar(100) NOT NULL,
   `Username` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL,
+  `Password` varchar(255) NOT NULL,
   `Fecha_Creacion` date NOT NULL,
   `Foto` varchar(255) NOT NULL DEFAULT 'imagenPredeterminada.jpg',
   `Is_Admin` tinyint(1) NOT NULL,
@@ -124,7 +136,15 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`ID_Usuario`, `Nombre`, `Apellido`, `Email`, `Username`, `Password`, `Fecha_Creacion`, `Foto`, `Is_Admin`, `Is_Instructor`, `ID_Boxes`) VALUES
-(14, 'Alex', 'cortes ronda', 'alexcortesronda63@gmail.com', 'javi', '$2y$10$S6cVCt8I0T8GZ2Jej/E6k.xIirWzl3CF8CjZ2DSHb5v', '2024-03-11', '', 1, 1, 1);
+(36, 'Alex', 'cortes ronda', 'alexcortesronda63@gmail.com', 'alex', '$2y$10$SMtZYVFpGZA.SQF7v4M0Ru14lcmUX.pdjLmWI1V64tSTofKq4RW.K', '2024-03-13', '', 0, 0, 1),
+(40, 'Jose', 'Anderson', 'crossfitaltea@gmail.com', 'jose', '$2y$10$LCNm1kjI27DVs7vx71Ix7uygRX98A/8IuWzmpF3kUUReLCGy1Q7zm', '2024-03-13', '', 1, 0, 12),
+(41, 'Jose Antonio', 'Tenz', 'alexcortesronda63@gmail.com', 'antonio', '$2y$10$jv9Zw7cfsC4U3Lr2X/9yT.Ip82R.Sa2rvxLI5YNS8ddO/484dnuYy', '2024-03-13', '', 1, 0, 13),
+(42, 'Ramon', 'perez', 'alexcortesronda63@gmail.com', 'ramon', '$2y$10$VZTDbgTl1MMQzjmQGryKc.KQ/2VKIeFd2DPlc8ujRTcBfhgSTZmay', '2024-03-13', '', 0, 0, 1),
+(48, 'simon', 'cortes ronda', 'alexcortesronda63@gmail.com', 'root', '$2y$10$Hp5Ue2r.ARudQDNvjBanS.eAQjwCU03MduCDHxIeqbJtF/e6Q5RgO', '2024-03-13', '', 0, 0, 14),
+(49, 'Esteban', 'co', 'alexcortesronda63@gmail.com', 'esteban', '$2y$10$w4cUvzSam2qVHumu3/ZgzeXC1P3ComTaPO4Kz2etZ2aPGF3JpIjSW', '2024-03-13', '', 0, 0, 12),
+(50, 'sancho', 'lkjsadf', 'alexcortesronda63@gmail.com', 'sancho', '$2y$10$Rz7FheyxBpiz8E8b59ao1O.ohWBolzP2fo7ppb20O8i1/WYc/gVsG', '2024-03-13', '', 0, 0, 12),
+(51, 'encarnma', 'cortes ronda', 'alexcortesronda63@gmail.com', 'encarna', '$2y$10$RGZY8HSx3p561NdOuAY1ieRAXwm2HlAzJgdDgLJNyeqrlNhxzDyPa', '2024-03-13', '', 0, 0, 1),
+(52, 'angie', 'cortes ronda', 'alexcortesronda63@gmail.com', 'angie', '$2y$10$dtDDnwUg5DIg3a8ZAPUp6us79V/tt5mR7isCKhKv/q6X2rpRBz.eG', '2024-03-13', '', 0, 0, 13);
 
 -- --------------------------------------------------------
 
@@ -200,7 +220,7 @@ ALTER TABLE `wods`
 -- AUTO_INCREMENT de la tabla `boxes`
 --
 ALTER TABLE `boxes`
-  MODIFY `ID_Boxes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_Boxes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `clases`
@@ -224,13 +244,13 @@ ALTER TABLE `reservas`
 -- AUTO_INCREMENT de la tabla `superadmin`
 --
 ALTER TABLE `superadmin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT de la tabla `wods`
