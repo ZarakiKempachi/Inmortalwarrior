@@ -1,5 +1,5 @@
 <?php
-include 'modulos/header.php';
+include '../modulos/header.php';
 ?>
         
         <section id="skills" class="skills bg-white">
@@ -59,5 +59,5 @@ include 'modulos/header.php';
               </div>
           </section>   
           <?php 
-include 'modulos/footer.php';
+include '../modulos/footer.php';
 ?>

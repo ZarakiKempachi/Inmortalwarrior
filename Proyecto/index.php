@@ -27,7 +27,7 @@
             </a>
             <div>
 
-                <a href="login.php" class="ini-sesion">
+                <a href="usuario/login.php" class="ini-sesion">
                     <img src="img/usuario.png" alt="">
                     Iniciar sesión
                 </a>

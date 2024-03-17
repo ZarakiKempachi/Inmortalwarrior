@@ -9,15 +9,15 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="../css/login.css">
 
   <title>Login</title>
 </head>
 
-<body style="background-image:url(img/boxoutside.jpg);background-repeat: no-repeat;background-size: cover; ">
+<body style="background-image:url(../img/boxoutside.jpg);background-repeat: no-repeat;background-size: cover; ">
 
   <div class="container">
-    <a class="close-button" href="index.php"><img src="img/cerrar.png" alt=""></a>
+    <a class="close-button" href="../index.php"><img src="../img/cerrar.png" alt=""></a>
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card border-0 shadow rounded-3 my-5" style="background-color: #1c2f3ecf;">
@@ -60,6 +60,6 @@
     </div>
   </div>
 </body>
-<script src="js/login.js"></script>
+<script src="../js/login.js"></script>
 
 </html>

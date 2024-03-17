@@ -1,16 +1,16 @@
 <?php
-include 'modulos/header.php';
+include '../modulos/header.php';
 ?>
-    <section class="bg-white my-2">
-        <div class="container mt-5 ">
-            <h2 class="text-center">Progamas</h2>
+    <section class="mt-5">
+        <div class="container mt-5">
+            <h2 class="text-center">Desafios</h2>
             <div>
-                <p>Aquí puedes encontrar todos los programas de entrenamiento.</p>
+                <p>Aquí puedes encontrar todos los desafios.</p>
             </div>
 
             <div id="data-table-basic_filter" class="dataTables_filter"><label><input type="search" class=""
                         placeholder="Busca por nombre" aria-controls="data-table-basic"></label>
-                        <button class="btn btn-secundary">Buscar</button>
+                        <button class="btn btn-secondary">Buscar</button>
             </div>
             <br>
             <div class="row" id="wodContainer">
@@ -312,7 +312,7 @@ include 'modulos/header.php';
                 </div>
             </div>
                 <!-- -----------------------------------------------------------                  -->
-                <div id="pagination" class="text-center">
+                <div id="pagination" class="text-center mt-4">
                     <button onclick="mostrarPagina(-1)" class="btn btn-secondary">Anterior</button>
                     <span id="paginaActual" class="mx-2">1</span>
                     <button onclick="mostrarPagina(1)" class="btn btn-secondary">Siguiente</button>
@@ -324,5 +324,5 @@ include 'modulos/header.php';
     
     </div>
     <?php 
-include 'modulos/footer.php';
+include '../modulos/footer.php';
 ?>

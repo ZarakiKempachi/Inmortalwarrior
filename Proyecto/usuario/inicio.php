@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-include 'modulos/header.php';
+include '../modulos/header.php';
 ?>
     <section id="hero">
         <div class="hero-container">
@@ -14,7 +14,7 @@ include 'modulos/header.php';
 
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active" id="carousel1"
-                        style="background-image: url('img/boxoutside.jpg');">
+                        style="background-image: url('../img/boxoutside.jpg');">
                         <div class="carousel-container">
                             <div class="carousel-content container">
                                 <h2 class="animate__animated animate__fadeInDown">Bienvenido a la Fortaleza Inmortal
@@ -25,7 +25,7 @@ include 'modulos/header.php';
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item" id="carousel3" style="background-image: url('img/OIG.jpg');">
+                    <div class="carousel-item" id="carousel3" style="background-image: url('../img/OIG.jpg');">
                         <div class="carousel-container">
                             <div class="carousel-content container">
                                 <h2 class="animate__animated animate__fadeInDown">Desafía tus Límites en Inmortal
@@ -36,7 +36,7 @@ include 'modulos/header.php';
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item " id="carousel2" style="background-image: url('img/OIG.E3CuaSTKz.jpg');">
+                    <div class="carousel-item " id="carousel2" style="background-image: url('../img/OIG.E3CuaSTKz.jpg');">
                         <div class="carousel-container">
                             <div class="carousel-content container">
                                 <h2 class="animate__animated animate__fadeInDown">Forjando Leyendas en la Comunidad
@@ -101,5 +101,5 @@ include 'modulos/header.php';
         </div>
       </section>
       <?php 
-include 'modulos/footer.php';
+include '../modulos/footer.php';
 ?>

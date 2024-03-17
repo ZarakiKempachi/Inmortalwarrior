@@ -1,5 +1,5 @@
 <?php
-include 'modulos/header.php';
+include '../modulos/headerAdmin.php';
 ?>
     <section class="container mt-4">
         <p><strong>Política de Privacidad de Inmortal Warriors, S.L.</strong></p>
@@ -67,5 +67,5 @@ include 'modulos/header.php';
         prácticas descritas en la misma.</p>
     </section>
     <?php 
-include 'modulos/footer.php';
+include '../modulos/footer.php';
 ?>

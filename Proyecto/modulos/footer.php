@@ -28,6 +28,6 @@
         </div>
          
     </body>
-    <script src="js/wods.js"></script> 
+    <script src="../js/wods.js"></script> 
 
 </html>

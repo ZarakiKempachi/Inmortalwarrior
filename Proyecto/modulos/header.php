@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     
      <!-- JS para iconos del pie de página -->
      <script src="https://kit.fontawesome.com/79fad8c5f9.js" crossorigin="anonymous"></script>
@@ -33,7 +33,7 @@
     <nav class="navbar navbar-expand-sm navbar-light  sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#" title="link">
-                <img src="img/logo_bueno.jpg" width="40px" title="img">
+                <img src="../img/logo_bueno.jpg" width="40px" title="img">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -43,19 +43,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="inicio.php" class="nav-link active text-dark" aria-current="page">Inicio</a>
+                        <a href="../usuario/inicio.php" class="nav-link active text-dark" aria-current="page">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a href="boxes.php" class="nav-link text-dark">Boxes</a>
+                        <a href="../usuario/boxes.php" class="nav-link text-dark">Boxes</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="tecnicas.php" class="nav-link text-dark">Técnicas de Crossfit</a>
+                        <a href="../usuario/tecnicas.php" class="nav-link text-dark">Técnicas de Crossfit</a>
                     </li>
                     <li class="nav-item">
-                        <a href="wods.php" class="nav-link text-dark">Wod´s</a>
+                        <a href="../usuario/wods.php" class="nav-link text-dark">Wod´s</a>
                     </li>
                     <li class="nav-item">
-                        <a href="eventos.php" class="nav-link text-dark">Eventos</a>
+                        <a href="../usuario/eventos.php" class="nav-link text-dark">Eventos</a>
                     </li>
                     <li class="nav-item">
                         <a href="../adminInmortal/panelAdministracion.php" class="nav-link text-dark">Eventos</a>
@@ -66,7 +66,7 @@
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0 show" href="#"
                         data-bs-toggle="dropdown" aria-expanded="true">
-                        <img src="img/foto_perfil.jpeg" id="foto_perfil" alt="Profile" class="rounded-circle">
+                        <img src="../img/foto_perfil.jpeg" id="foto_perfil" alt="Profile" class="rounded-circle">
                         <span class="d-none d-md-block dropdown-toggle ps-2">Alex Cortés</span>
                     </a><!-- End Profile Iamge Icon -->
 
@@ -81,7 +81,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="perfil.php">
+                            <a class="dropdown-item d-flex align-items-center" href="../usuario/perfil.php">
                                 <i class="bi bi-person"></i>
                                 <span>Mi perfil</span>
                             </a>
@@ -92,7 +92,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="index.php">
+                            <a class="dropdown-item d-flex align-items-center" href="../index.php">
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Salir</span>
                             </a>

@@ -1,5 +1,5 @@
 <?php
-include 'modulos/header.php';
+include '../modulos/headerAdmin.php';
 ?>
         </nav>
         <section class=" bg-white" id="opciones-perfil">
@@ -7,7 +7,7 @@ include 'modulos/header.php';
                 <div class="row">
                     <div class="perfil col-md-6 col-lg-4  mb-4">
                         <a href="general.php" class="image-container">
-                            <img src="img/perfil.jpg" class="img-thumbnail" alt="...">
+                            <img src="../img/perfil.jpg" class="img-thumbnail" alt="...">
                             <div class="overlay-text">
                                 General
                             </div>
@@ -15,7 +15,7 @@ include 'modulos/header.php';
                     </div>
                     <div class="perfil col-md-6 col-lg-4  mb-4">
                         <a href="prs.php" class="image-container">
-                            <img src="img/prs.jpg" class="img-thumbnail" alt="...">
+                            <img src="../img/prs.jpg" class="img-thumbnail" alt="...">
                             <div class="overlay-text">
                                 PR`S
                             </div>
@@ -23,7 +23,7 @@ include 'modulos/header.php';
                     </div>
                     <div class="perfil col-md-6 col-lg-4  mb-4">
                         <a href="calendario.php" class="image-container">
-                            <img src="img/calendario.jpg" class="img-thumbnail" alt="...">
+                            <img src="../img/calendario.jpg" class="img-thumbnail" alt="...">
                             <div class="overlay-text">
                                 Calendario
                             </div>
@@ -35,5 +35,5 @@ include 'modulos/header.php';
         </section>
 
         <?php 
-include 'modulos/footer.php';
+include '../modulos/footer.php';
 ?>

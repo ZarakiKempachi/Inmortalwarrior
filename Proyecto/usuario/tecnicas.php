@@ -1,5 +1,5 @@
 <?php
-include 'modulos/header.php';
+include '../modulos/header.php';
 ?>
     <section class="py-5 bg-white">
         <div class="container px-4 px-lg-5 mt-5">
@@ -79,5 +79,5 @@ include 'modulos/header.php';
     
     
     <?php 
-include 'modulos/footer.php';
+include '../modulos/footer.php';
 ?>

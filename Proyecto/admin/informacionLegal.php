@@ -1,5 +1,5 @@
 <?php
-include 'modulos/header.php';
+include '../modulos/headerAdmin.php';
 ?>
     <section class="container mt-4">
         
@@ -64,5 +64,5 @@ include 'modulos/header.php';
             Conforme al Art. 14.1 del Reglamento (UE) 524/2013, la Comisión Europea facilita una plataforma de resolución de litigios en línea disponible en el siguiente enlace: http://ec.europa.eu/consumers/odr/.</p>
     </section>
     <?php 
-include 'modulos/footer.php';
+include '../modulos/footer.php';
 ?>
