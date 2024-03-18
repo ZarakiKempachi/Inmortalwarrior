@@ -27,11 +27,21 @@ $resultado_pagina = $conexion->query($sql_pagina);
 
 <section class="py-5 bg-white general">
     <div class="container px-4 px-lg-5 mt-5">
+        <div class="col mb-5">
+            <input type="text" id="inputBusquedaBox" placeholder="Buscar">
+            <button id="btnBuscar">Buscar</button>
+            <div id="pagination" class="text-center mb-1">
+    <?php if ($total_paginas > 1) : ?>
+        <a href="?pagina=1" class="btn btn-secondary">Primera</a>
+        <a href="?pagina=<?php echo ($pagina_actual > 1) ? $pagina_actual - 1 : 1; ?>" class="btn btn-secondary">Anterior</a>
+        <span class="mx-2"><?php echo $pagina_actual; ?> de <?php echo $total_paginas; ?></span>
+        <a href="?pagina=<?php echo ($pagina_actual < $total_paginas) ? $pagina_actual + 1 : $total_paginas; ?>" class="btn btn-secondary">Siguiente</a>
+        <a href="?pagina=<?php echo $total_paginas; ?>" class="btn btn-secondary">Última</a>
+    <?php endif; ?>
+</div>
+        </div>
         <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <div class="col mb-5">
-                <input type="text" id="inputBusquedaBox" placeholder="Buscar">
-                <button id="btnBuscar">Buscar</button>
-            </div>
+
 
             <?php
             // Verificar si hay resultados en la consulta
@@ -61,20 +71,11 @@ $resultado_pagina = $conexion->query($sql_pagina);
             ?>
 
         </div>
-
-        <!-- Controles de paginación -->
-        <div id="pagination" class="text-center mb-1">
-            <?php if ($total_paginas > 1): ?>
-                <a href="?pagina=1" class="btn btn-secondary">Primera</a>
-                <a href="?pagina=<?php echo ($pagina_actual > 1) ? $pagina_actual - 1 : 1; ?>" class="btn btn-secondary">Anterior</a>
-                <span class="mx-2"><?php echo $pagina_actual; ?> de <?php echo $total_paginas; ?></span>
-                <a href="?pagina=<?php echo ($pagina_actual < $total_paginas) ? $pagina_actual + 1 : $total_paginas; ?>" class="btn btn-secondary">Siguiente</a>
-                <a href="?pagina=<?php echo $total_paginas; ?>" class="btn btn-secondary">Última</a>
-            <?php endif; ?>
-        </div>
-        
     </div>
 </section>
+
+<!-- Controles de paginación -->
+
 
 <?php
 include '../modulos/footer.php';

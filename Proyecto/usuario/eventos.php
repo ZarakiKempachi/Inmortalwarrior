@@ -2,7 +2,7 @@
 include '../modulos/header.php';
 ?>
         
-        <section id="skills" class="skills bg-white">
+        <section id="opciones-perfil" class="skills bg-white">
             <div class="container aos-init aos-animate mb-4 " data-aos="fade-up">
       
               <div class="row">

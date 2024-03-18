@@ -8,7 +8,7 @@ if ($conexion->connect_error) {
 }
 
 // Número de resultados por página
-$resultados_por_pagina = 6; 
+$resultados_por_pagina = 6;
 
 // Obtener el número total de resultados
 $sql_total = "SELECT COUNT(*) as total FROM wods WHERE tipo = 'The Heroes'";
@@ -32,18 +32,28 @@ $result_pagina = $conexion->query($sql_pagina);
 <section class="general bg-white my-2">
     <div class="container mt-5">
         <h2 class="text-center">The Heroes</h2>
-        <div>
+        <div class="text-center">
             <p>Aquí puedes encontrar todos los wod`s de "The Heroes".</p>
         </div>
 
-        <div id="data-table-basic_filter" class="dataTables_filter">
-            <label><input type="search" class="form-control" id="inputBusqueda" placeholder="Busca por nombre" aria-controls="data-table-basic">
+        <div id="data-table-basic_filter" class="d-flex justify-content-center gap-3">
+            <label class="text-center">
+                <input type="search" class="form-control" id="inputBusqueda" placeholder="Busca por nombre" aria-controls="data-table-basic">
             </label>
-            <button>Buscar</button>
+            <button class="btn btn-secondary ml-3">Buscar</button>
         </div>
-        <br>
+        <div id="pagination" class="text-center m-3 ">
+            <?php if ($total_paginas > 1) : ?>
+                <a href="?pagina=1" class="btn btn-secondary">Primera</a>
+                <a href="?pagina=<?php echo $pagina_actual > 1 ? $pagina_actual - 1 : 1; ?>" class="btn btn-secondary">Anterior</a>
+                <span class="mx-2"><?php echo $pagina_actual; ?> de <?php echo $total_paginas; ?></span>
+                <a href="?pagina=<?php echo $pagina_actual < $total_paginas ? $pagina_actual + 1 : $total_paginas; ?>" class="btn btn-secondary">Siguiente</a>
+                <a href="?pagina=<?php echo $total_paginas; ?>" class="btn btn-secondary">Última</a>
+            <?php endif; ?>
+        </div>
 
-        <div class="row" id="wodContainer">
+
+        <div class="row p-3" id="wodContainer">
             <?php
             if ($result_pagina->num_rows > 0) {
                 while ($wod = $result_pagina->fetch_assoc()) {
@@ -63,15 +73,7 @@ $result_pagina = $conexion->query($sql_pagina);
         </div>
 
         <!-- Aquí puedes incluir los controles de paginación -->
-        <div id="pagination" class="text-center mb-1 ">
-            <?php if ($total_paginas > 1): ?>
-                <a href="?pagina=1" class="btn btn-secondary">Primera</a>
-                <a href="?pagina=<?php echo $pagina_actual > 1 ? $pagina_actual - 1 : 1; ?>" class="btn btn-secondary">Anterior</a>
-                <span class="mx-2"><?php echo $pagina_actual; ?> de <?php echo $total_paginas; ?></span>
-                <a href="?pagina=<?php echo $pagina_actual < $total_paginas ? $pagina_actual + 1 : $total_paginas; ?>" class="btn btn-secondary">Siguiente</a>
-                <a href="?pagina=<?php echo $total_paginas; ?>" class="btn btn-secondary">Última</a>
-            <?php endif; ?>
-        </div>
+
     </div>
 </section>
 
