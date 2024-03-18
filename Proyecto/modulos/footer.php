@@ -26,8 +26,9 @@
                 <!-- Copyright -->
             </footer>
         </div>
-         
+        <script src="../js/wods.js"></script> 
+        <script src="../js/boxes.js"></script> 
     </body>
-    <script src="../js/wods.js"></script> 
+    
 
 </html>

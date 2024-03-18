@@ -280,8 +280,8 @@ align-items: center;
 }
 .wods{
   color:white;
-  display: none;
-   
+  
+  
 }
 .p-4{
   border-radius: 10px;
@@ -297,6 +297,14 @@ align-items: center;
   display: block;
   
 }
+.cuadro-wod{
+  color:white;
+  width: 32%; 
+  height: 20%; 
+  
+}
+
+
 
 
 

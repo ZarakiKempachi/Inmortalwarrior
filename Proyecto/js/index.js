@@ -17,7 +17,7 @@ $(document).ready(function () {
         let uname = $('#uname').val();
         let passAdmin = $('#passAdmin').val();
         
-        // Make an AJAX request
+        
         $.ajax({
             type: "POST",
             url: "../CRUD/registroBox.php",

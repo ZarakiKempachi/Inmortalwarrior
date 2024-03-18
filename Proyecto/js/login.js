@@ -20,7 +20,7 @@ $(document).ready(function(){
                     // Verificar el tipo de usuario y redirigir según el tipo
                     switch (response.userType) {
                         case 'admin':
-                            window.location.href = "../admin/inicio.php"; // Redireccionar a la página de admin
+                            window.location.href = "../admin/inicioAdmin.php"; // Redireccionar a la página de admin
                             break;
                         case 'atleta':
                             window.location.href = "inicio.php"; // Redireccionar a la página de atleta

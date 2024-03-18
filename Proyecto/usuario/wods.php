@@ -48,7 +48,7 @@ include '../modulos/header.php';
                         <a href="programas.php" class="image-container">
                             <img src="../img/programas.jpg" class="img-thumbnail" alt="...">
                             <div class="overlay-text">
-                                Progamas
+                                Programas
                             </div>
                         </a>
                     </div>

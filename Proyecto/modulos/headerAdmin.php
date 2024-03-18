@@ -43,14 +43,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="inicio.php" class="nav-link active text-dark" aria-current="page">Inicio</a>
+                        <a href="inicioAdmin.php" class="nav-link active text-dark" aria-current="page">Inicio</a>
                     </li>
                     <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownClases" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Clases
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownClases">
-                        <li><a class="dropdown-item" href="clases.php">Ver Clases</a></li>
+                        <li><a class="dropdown-item" href="clases.php">Crear Clases</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <!-- Opción Clases Creadas -->
                         <li><a class="dropdown-item" href="clasesCreadas.php">Clases Creadas</a></li>
@@ -80,7 +80,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="perfil.php">
+                            <a class="dropdown-item d-flex align-items-center" href="../perfilAdmin.php">
                                 <i class="bi bi-person"></i>
                                 <span>Mi perfil</span>
                             </a>
@@ -91,7 +91,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="index.php">
+                            <a class="dropdown-item d-flex align-items-center" href="../index.php">
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Salir</span>
                             </a>
