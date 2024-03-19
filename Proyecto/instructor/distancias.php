@@ -1,7 +1,10 @@
 
 <?php
-include '../modulos/header.php';
+
+?>
+<?php
 include '../CRUD/conexion.php';
+include '../modulos/headerInstructor.php';
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
@@ -10,7 +13,7 @@ if ($conexion->connect_error) {
 $resultados_por_pagina = 6; 
 
 // Obtener el número total de resultados
-$sql_total = "SELECT COUNT(*) as total FROM wods WHERE tipo = 'Desafios'";
+$sql_total = "SELECT COUNT(*) as total FROM wods WHERE tipo = 'Distancias'";
 $result_total = $conexion->query($sql_total);
 $row_total = $result_total->fetch_assoc();
 $total_resultados = $row_total['total'];
@@ -25,14 +28,14 @@ $pagina_actual = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
 $inicio = ($pagina_actual - 1) * $resultados_por_pagina;
 
 
-$sql_pagina = "SELECT * FROM wods WHERE tipo = 'Desafios' LIMIT $inicio, $resultados_por_pagina";
+$sql_pagina = "SELECT * FROM wods WHERE tipo = 'Distancias' LIMIT $inicio, $resultados_por_pagina";
 $result_pagina = $conexion->query($sql_pagina);
 ?>
 <section class="general bg-white my-2">
     <div class="container mt-5">
-        <h2 class="text-center">Desafios</h2>
+        <h2 class="text-center">The Heroes</h2>
         <div class="text-center">
-            <p>Aquí puedes encontrar todos los Desafios.</p>
+            <p>Aquí puedes encontrar todos los wod`s de "The Heroes".</p>
         </div>
 
         <div id="data-table-basic_filter" class="d-flex justify-content-center gap-3">

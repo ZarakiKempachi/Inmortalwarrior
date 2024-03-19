@@ -1,0 +1,25 @@
+/*--------------------------------------------------------------
+# Calendario
+--------------------------------------------------------------*/
+.fc-event-title {
+    color: #000000; 
+  }
+  
+ 
+  .fc-daygrid-day-number {
+    color: #000000;
+  }
+  .fc-daygrid-event-dot {
+    color: #000000;
+  }
+  .fc-event-time{
+    color: #000000;
+  
+  }
+  
+  .fc-col-header-cell-cushion {
+    color: #000000; 
+  }
+  #calendar{
+    flex-grow: 1;
+  }

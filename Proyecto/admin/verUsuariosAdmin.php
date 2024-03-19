@@ -1,7 +1,5 @@
 <?php
 include '../modulos/headerAdmin.php';
-?>
-<?php
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
@@ -16,8 +14,8 @@ echo '<th>Nombre</th>';
 echo '<th>Apellido</th>';
 echo '<th>Email</th>';
 echo '<th>Fecha de Creación</th>';
-
 echo '<th></th>';
+echo '<th></th>'; // Añadimos una nueva columna para el nuevo botón
 echo '</tr>';
 echo '</thead>';
 echo '<tbody>';
@@ -29,8 +27,11 @@ foreach ($usuarios as $usuario) {
     echo '<td>' . $usuario['Email'] . '</td>';
     echo '<td>' . $usuario['Fecha_Creacion'] . '</td>';
     
-    echo '<td><button class="borrarUsuario" data-id="' . $usuario['ID_Usuario'] . '">Borrar</button></td>';
+    echo '<td><button id="borrarUsuario" class="btn btn-secondary" data-id="' . $usuario['ID_Usuario'] . '">Borrar</button></td>';
 
+    // Nuevo botón para cambiar el valor de Is_Instructor
+    echo '<td><button id="cambiarInstructor" class="btn btn-secondary" data-id="' . $usuario['ID_Usuario'] . '">Activar Instructor</button></td>';
+    
     echo '</tr>';
 }
 echo '</tbody>';
@@ -57,8 +58,5 @@ function obtenerUsuarios(){
 
     return $usuarios;
 }
-
-?>
-<?php
 include '../modulos/footer.php';
 ?>

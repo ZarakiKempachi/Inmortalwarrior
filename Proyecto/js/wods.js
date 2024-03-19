@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Verificar si el elemento inputBusqueda existe
     if (inputBusqueda) {
         inputBusqueda.addEventListener('input', function() {
-            console.log("Buscando...");
             let busqueda = inputBusqueda.value.toLowerCase().trim();
             let cuadrosWod = document.querySelectorAll('.cuadro-wod');
 

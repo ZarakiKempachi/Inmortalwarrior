@@ -1,4 +1,5 @@
 <?php
+
 include 'conexion.php';
 
 // Inicializar la respuesta como un array asociativo
@@ -10,8 +11,8 @@ function hashearContraseña($password) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = isset($_POST['username']) ? mysqli_real_escape_string($conexion, $_POST['username']) : '';
+    $password = isset($_POST['password']) ? mysqli_real_escape_string($conexion, $_POST['password']) : '';
 
     // Verificar si el usuario es un superadministrador
     $sql_superadmin = "SELECT * FROM superadmin WHERE Username = '$username'";
@@ -24,6 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verificar la contraseña proporcionada con el hash almacenado
         if (password_verify($password, $hashAlmacenado_superadmin)) {
             // El superadministrador está autenticado
+            session_start();
+            $_SESSION['userType'] = "superadmin";
+            $_SESSION['username'] = $username;
             $response['status'] = "success";
             $response['userType'] = "superadmin";
         } else {
@@ -32,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $response['message'] = "Contraseña incorrecta";
         }
     } else {
-        // Verificar si el usuario es un administrador o un atleta
+        // Verificar si el usuario es un administrador, atleta o instructor
         $sql = "SELECT * FROM usuarios WHERE Username = '$username'";
         $result = $conexion->query($sql);
         
@@ -42,20 +46,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Verificar la contraseña proporcionada con el hash almacenado
             if (password_verify($password, $hashAlmacenado)) {
-                // Determinar el tipo de usuario según las columnas Is_Admin e Is_Instructor
-                if ($row['Is_Admin'] == 1 && $row['Is_Instructor'] == 0) {
+                session_start();
+                if ($row['Is_Admin'] == 1) {
                     // Usuario Admin
-                    $response['status'] = "success";
-                    $response['userType'] = "admin";
-                } elseif ($row['Is_Admin'] == 0 && $row['Is_Instructor'] == 0) {
-                    // Usuario Atleta
-                    $response['status'] = "success";
-                    $response['userType'] = "atleta";
+                    $_SESSION['userType'] = "admin";
+                } elseif ($row['Is_Instructor'] == 1) {
+                    // Usuario Instructor
+                    $_SESSION['userType'] = "instructor";
                 } else {
-                    // Tipo de usuario no reconocido
-                    $response['status'] = "error";
-                    $response['message'] = "Tipo de usuario no reconocido";
+                    // Usuario Atleta
+                    $_SESSION['userType'] = "atleta";
                 }
+                $_SESSION['username'] = $username;
+
+                // Obtener el ID del usuario y el ID del box asociado
+                $user_id = $row['ID_Usuario'];
+                $box_id = $row['ID_Boxes'];
+
+                // Guardar los IDs en la sesión
+                $_SESSION['user_id'] = $user_id;
+                $_SESSION['box_id'] = $box_id;
+                
+
+                $response['status'] = "success";
+                $response['userType'] = $_SESSION['userType'];
             } else {
                 // Falló la autenticación
                 $response['status'] = "error";
@@ -74,5 +88,13 @@ $conexion->close();
 
 // Enviar la respuesta como JSON
 header('Content-Type: application/json');
+
+// Si el inicio de sesión es exitoso, establece cookies (opcional)
+if ($response['status'] === "success" && isset($_SESSION['userType'])) {
+    $cookie_expires = time() + 3600 * 24 * 30; // Caduca en 30 días
+    setcookie('userType', $_SESSION['userType'], $cookie_expires, '/');
+    setcookie('username', $_SESSION['username'], $cookie_expires, '/');
+}
+
 echo json_encode($response);
 ?>

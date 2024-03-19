@@ -1,5 +1,5 @@
 <?php
-include '../modulos/headerAdmin.php';
+include '../modulos/headerInstructor.php';
 ?>
 
     <div class="container" id="opciones-perfil">

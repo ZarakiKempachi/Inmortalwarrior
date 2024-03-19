@@ -19,6 +19,7 @@
 
 <!-- Script JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script src="//cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
 
 
 
@@ -56,6 +57,9 @@
                     </li>
                     <li class="nav-item">
                         <a href="../usuario/eventos.php" class="nav-link text-dark">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../usuario/clasesUsuario.php" class="nav-link text-dark">Clases</a>
                     </li>
                 </ul>
             </div>

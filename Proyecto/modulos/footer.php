@@ -28,6 +28,11 @@
         </div>
         <script src="../js/wods.js"></script> 
         <script src="../js/boxes.js"></script> 
+        <script src="../js/verUsuariosAdmin.js"></script>
+        <script src="../js/clases.js"></script>
+        <script src="../js/calendarioAdmin.js"></script>
+        <link rel="stylesheet" href="../css/calendario.css">
+        
     </body>
     
 

@@ -25,6 +25,9 @@ $(document).ready(function(){
                         case 'atleta':
                             window.location.href = "inicio.php"; // Redireccionar a la página de atleta
                             break;
+                        case 'instructor':
+                            window.location.href = "../instructor/inicioInstructor.php"; // Redireccionar a la página de atleta
+                            break;
                         case 'superadmin':
                             window.location.href = "../adminInmortal/panelAdministracion.php"; // Redireccionar a la página de superadmin
                             break;

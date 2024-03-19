@@ -1,14 +1,15 @@
 <?php
+session_start();
+
 $nombreClase = $_REQUEST['Nombre'];
 $fechaClase = $_REQUEST['Fecha'];
 $horaClase = $_REQUEST['Hora'];
+$wodClase = $_REQUEST['Wod'];
 
-// Supongamos que tienes acceso a los IDs del usuario, box y WODs desde la sesión del usuario
-$idUsuario = $_SESSION['ID_Usuario']; // Obtener el ID del usuario desde la sesión
-$idBox = $_SESSION['ID_Box']; // Obtener el ID del box desde la sesión
-$idWod = $_SESSION['ID_Wod']; // Obtener el ID del WOD desde la sesión
+$idUsuario = $_SESSION['user_id']; 
+$idBox = $_SESSION['box_id']; 
 
-function crearClase($nombreClase, $horaClase, $fechaClase, $idUsuario, $idBox, $idWod)
+function crearClase($nombreClase, $horaClase, $fechaClase, $idUsuario, $idBox, $wodClase)
 {
     include 'conexion.php';
 
@@ -18,17 +19,20 @@ function crearClase($nombreClase, $horaClase, $fechaClase, $idUsuario, $idBox, $
 
     // Insertar en la base de datos
     $sql = "INSERT INTO clases (Nombre, Horario, Fecha, ID_Boxes, ID_Wods, ID_Usuario) 
-            VALUES ('$nombreClase', '$horaClase', '$fechaClase', $idBox, $idWod, $idUsuario)";
+            VALUES ('$nombreClase', '$horaClase', '$fechaClase', $idBox, $wodClase, $idUsuario)";
 
     if (mysqli_query($conexion, $sql)) {
-        echo json_encode("Clase creada");
+        $response = array("status" => "success", "message" => "Clase creada");
     } else {
-        echo json_encode("Error al crear clase: " . mysqli_error($conexion));
+        $response = array("status" => "error", "message" => "Error al crear clase: " . mysqli_error($conexion));
     }
 
     // Cerrar la conexión a la base de datos
     mysqli_close($conexion);
+
+    // Devolver la respuesta como JSON
+    
 }
 
-crearClase($nombreClase, $horaClase, $fechaClase, $idUsuario, $idBox, $idWod);
+crearClase($nombreClase, $horaClase, $fechaClase, $idUsuario, $idBox, $wodClase);
 ?>

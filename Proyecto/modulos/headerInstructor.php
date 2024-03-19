@@ -15,7 +15,6 @@
     <!-- Script JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
     <script src="//cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
-   
 
 
 
@@ -54,24 +53,20 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="../admin/verUsuariosAdmin.php" class="nav-link text-dark">Usuarios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../admin/wodsAdmin.php" class="nav-link text-dark">Wod´s</a>
-                        </li>
+                            <a href="../instructor/wodsInstructor.php" class="nav-link text-dark">Wod´s</a>
                     </ul>
                 </div>
                 <a class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0 show" href="#" data-bs-toggle="dropdown" aria-expanded="true">
-                        <img src="../img/OIG.dge.jpg" id="foto_perfil" alt="Profile" class="rounded-circle">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">Admin</span>
+                        <img src="../img/OIG.E3CuaSTKz.jpg" id="foto_perfil" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">Instructor</span>
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class=" dropdown-menu dropdown-menu-end dropdown-menu-arrow profile " data-popper-placement="bottom-end">
                         <li class="dropdown-header">
                             <h6>Alex Cortés</h6>
-                            <span>Atleta</span>
+                            <span>Instructor</span>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
