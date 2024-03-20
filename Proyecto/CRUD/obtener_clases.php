@@ -3,9 +3,12 @@ session_start();
 $box_id = $_SESSION['box_id'];
 include 'conexion.php';
 
-$sql = "SELECT `ID_Clases`, `Nombre`, `Horario`, `ID_Usuario`, `ID_Wods`, `ID_Boxes`, `Fecha` FROM `clases` WHERE ID_Boxes = $box_id";
+$sql = "SELECT c.`ID_Clases`, c.`Nombre`, c.`Horario`, c.`ID_Usuario`, c.`ID_Wods`, c.`ID_Boxes`, c.`Fecha`, 
+               u.`Nombre` AS 'NombreInstructor'
+        FROM `clases` c 
+        LEFT JOIN `usuarios` u ON c.`ID_Usuario` = u.`ID_Usuario`
+        WHERE c.`ID_Boxes` = $box_id";
 
-$sql2 = "SELECT * FROM `usuarios` WHERE ";
 $resultado = mysqli_query($conexion, $sql);
 
 if ($resultado) {

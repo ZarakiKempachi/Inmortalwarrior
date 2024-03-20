@@ -26,27 +26,26 @@ if (isset($_POST['clase_id'])) {
             $fecha_actual = date("Y-m-d"); // Obtener la fecha actual
             $sql_insert_reserva = "INSERT INTO reservas (Fecha, ID_Usuario, ID_Clases) VALUES ('$fecha_actual', '$user_id', '$clase_id')"; 
 
-            if ($conexion->query($sql_insert_reserva) === TRUE) {
+            if ($conexion->query($sql_insert_reserva) === true) {
                 $response = array("success" => true, "message" => "Inscripción exitosa");
-                echo json_encode($response);
             } else {
                 $response = array("success" => false, "message" => "Error al inscribirse en la clase: " . $conexion->error);
-                echo json_encode($response);
             }
         } else {
             // Si no se encontró el ID de la clase, devuelve un mensaje de error
             $response = array("success" => false, "message" => "No se encontró el ID de la clase");
-            echo json_encode($response);
         }
     } catch (Exception $e) {
         $response = array("success" => false, "message" => "Error en el servidor: " . $e->getMessage());
-        echo json_encode($response);
     }
 
     // Cerrar conexión
     $conexion->close();
 } else {
     $response = array("success" => false, "message" => "No se proporcionó un ID de clase válido");
-    echo json_encode($response);
 }
+
+// Imprimir solo el objeto JSON sin otros caracteres adicionales
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>
