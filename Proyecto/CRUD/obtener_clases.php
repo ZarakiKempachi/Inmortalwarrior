@@ -14,6 +14,7 @@ if ($resultado) {
 
     // Recorrer los resultados y agregar cada fila al array de clases
     while ($fila = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
+        $fila['ID_Clase'] = $fila['ID_Clases'];
         $clases[] = $fila;
     }
 
