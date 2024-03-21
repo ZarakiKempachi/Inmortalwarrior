@@ -23,3 +23,9 @@
   #calendar{
     flex-grow: 1;
   }
+  .fc-timegrid-event-harness :hover{
+    cursor: pointer;
+  }
+  .fc-today-button:hover{
+    cursor: pointer;
+  } 

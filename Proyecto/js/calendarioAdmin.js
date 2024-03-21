@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (calendarEl) {
         // Inicializar el calendario
         const calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
+            initialView: 'timeGridWeek',
             events: function (fetchInfo, successCallback, failureCallback) {
                 // Realizar una solicitud AJAX para obtener las clases de la base de datos
                 $.ajax({
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 usersList += "- " + usuario + "\n";
                                             });
 
-                                            // Mostrar la lista de usuarios inscritos en una ventana emergente
+                                            
                                             swal({
                                                 title: 'Usuarios inscritos',
                                                 text: usersList,
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         }
                                     },
                                     error: function (xhr, status, error) {
-                                        // Manejar errores de la solicitud AJAX
+                                        
                                         swal({
                                             title: 'Error',
                                             text: 'Error al obtener la lista de usuarios inscritos en la clase. Por favor, inténtalo de nuevo más tarde.',
@@ -173,6 +173,17 @@ document.addEventListener('DOMContentLoaded', function () {
                         });
                     }
                 });
+            },
+            minTime: '06:00:00', // Establecer la hora mínima a las 6 de la mañana
+            maxTime: '23:00:00', // Establecer la hora máxima a las 23:00 (11 PM)
+            
+            eventContent: function(arg) {
+                return {
+                    html: '<div class="fc-content">' +
+                                '<span class="fc-time">' + arg.event.start.toLocaleTimeString('es-ES', {hour: '2-digit', minute: '2-digit'}) + '</span>' +
+                                '<span class="fc-title">' + arg.event.title + '</span>' +
+                            '</div>'
+                };
             }
         });
         // Renderizar el calendario

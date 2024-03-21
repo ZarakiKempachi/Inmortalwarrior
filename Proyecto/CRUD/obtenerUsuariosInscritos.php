@@ -23,6 +23,8 @@ if ($resultado) {
     while ($fila = mysqli_fetch_assoc($resultado)) {
         $usuarios[] = $fila['Nombre'];
         
+        
+        
     }
 
     // Devolver los nombres de los usuarios en formato JSON si hay usuarios inscritos
