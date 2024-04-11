@@ -20,6 +20,7 @@
 <!-- Script JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
 <script src="//cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXOCGCUMrt-pSLWaNgOq7HyQ1D0ewNJsE"></script>
 
 
 
@@ -49,9 +50,9 @@
                     <li class="nav-item">
                         <a href="../usuario/boxes.php" class="nav-link text-dark">Boxes</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a href="../usuario/tecnicas.php" class="nav-link text-dark">Técnicas de Crossfit</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a href="../usuario/wods.php" class="nav-link text-dark">Wod´s</a>
                     </li>
