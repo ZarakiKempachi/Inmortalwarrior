@@ -18,11 +18,11 @@ if ($resultado->num_rows > 0) {
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 d-flex align-items-stretch">
             <!-- Imagen del box -->
-            <div class="col-lg-4">
-                <img class="img-fluid rounded mb-4 mb-lg-0" src="../../img/<?php echo $box['Foto']; ?>" alt="...">
+            <div class="col-lg-6">
+                <img class="img-fluid rounded mb-4 mb-lg-0 h-100" src="../../img/<?php echo $box['Foto']; ?>" alt="...">
             </div>
             <!-- Datos del box -->
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="card border-0 shadow">
                     <div class="card-body p-4">
                         <h5 class="card-title"><?php echo $box['Nombre']; ?></h5>
@@ -36,8 +36,8 @@ if ($resultado->num_rows > 0) {
                 </div>
             </div>
             <!-- Mapa -->
-            <div class="col-lg-4">
-                <div class="card border-0 shadow" id="map_<?php echo $box['ID_Boxes']; ?>" style="height: 400px;"></div>
+            <div class="col-lg-12">
+                <div class="card border-0 shadow" id="map_<?php echo $box['ID_Boxes']; ?>" style="height: 800px;"></div>
             </div>
         </div>
     </div>

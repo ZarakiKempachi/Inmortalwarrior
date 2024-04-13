@@ -64,10 +64,6 @@ $email = $_REQUEST['emailAlumno'];
 $passwd = $_REQUEST['passAdmin'];
 $id_box = $_REQUEST['idBox'];
 
-$email = $_REQUEST['emailAlumno'];
-
-$email = $_REQUEST['emailAlumno'];
-
 function registro($username, $nombre, $apellidos, $email, $passwd, $id_box)
 {
     include 'conexion.php';

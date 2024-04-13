@@ -1,6 +1,6 @@
 
 <?php
-session_start();
+
 include '../modulos/header.php';
 ?>
     <section id="hero">

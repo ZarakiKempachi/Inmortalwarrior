@@ -42,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
+            
             $hashAlmacenado = $row['Password'];
 
             // Verificar la contraseña proporcionada con el hash almacenado
@@ -63,6 +64,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $user_id = $row['ID_Usuario'];
                 $box_id = $row['ID_Boxes'];
 
+                $_SESSION['nombre'] = $row['Nombre'];
+                $_SESSION['apellido'] = $row['Apellido'];
+                $_SESSION['email'] = $row['Email'];
+                
                 // Guardar los IDs en la sesión
                 $_SESSION['user_id'] = $user_id;
                 $_SESSION['box_id'] = $box_id;

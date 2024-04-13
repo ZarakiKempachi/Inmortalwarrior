@@ -25,6 +25,7 @@
             <a class="navbar-brand" href="#">
                 <img src="img/logo_bueno.jpg" width="40px">
             </a>
+            
             <div>
 
                 <a href="usuario/login.php" class="ini-sesion">
@@ -92,8 +93,8 @@
         <div class="container">
             <div class="d-flex row justify-content-center my-2">
                 <!-- Tarjeta 1: Nuevo Administrador -->
-                <div class="col-md-4 tarjetasLanding my-2">
-                    <div class="card h-100 shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="col-md-4  my-2">
+                    <div class="card h-100 shadow-lg p-3 mb-5 tarjetasLanding  rounded">
                     <h4 class="titulo_cards_mains card-title text-center">ÚNETE COMO BOX</h4>
                         <img src="img/box7.jpg" class="card-img-top" alt="Imagen Administrador">
                         <div class="card-body text-center">
@@ -102,8 +103,8 @@
                     </div>
                 </div>
                 <!-- Tarjeta 2: Nuevo Alumno -->
-                <div class="col-md-4 tarjetasLanding my-2">
-                    <div class="card h-100 shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="col-md-4  my-2">
+                    <div class="card h-100 shadow-lg p-3 mb-5 tarjetasLanding rounded">
                         <h4 class="titulo_cards_mains card-title text-center">REGISTRO DE ATLETAS</h4>
                         <img src="img/OIP (2).jpg" class="card-img-top" alt="Imagen Alumno">
                         <div class="card-body text-center">
@@ -282,7 +283,6 @@
                                     </select>
                                 </div>
                             </div>
-                            <!-- HAY QUE REFACTORIZAR / ANALIZAR COMO SE MUESTRAN LOS CENTROS EN BASE A LA UBICACION -->
                             <div class="form-group d-flex row justify-content-center align-items-center my-2">
                                 <span class="col-md-1 col-lg-1 col-sm-1 col-1 col-xl-1 text-center"><i class="fa fa-home bigicon"></i></span>
                                 <div class="col-md-8 col-lg-10 col-sm-8 col-8 col-xl-9">

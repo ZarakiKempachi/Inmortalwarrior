@@ -1,3 +1,50 @@
+<?php
+// Iniciar la sesión para acceder a las variables de sesión
+session_start();
+
+// Verificar si el usuario ha iniciado sesión correctamente
+if (isset($_SESSION['username'])) {
+    // El usuario ha iniciado sesión, obtener el nombre de usuario de la sesión
+    $nombre_de_usuario = $_SESSION['username'];
+
+    // Verificar si el nombre y el apellido están disponibles en la sesión
+    if (isset($_SESSION['nombre']) && isset($_SESSION['apellido'])) {
+        // Obtener el nombre y el apellido del usuario de la sesión
+        $nombre = $_SESSION['nombre'];
+        $apellido = $_SESSION['apellido'];
+    } else {
+        // Si el nombre o el apellido no están disponibles en la sesión, establecer valores predeterminados o manejar el error según sea necesario
+        $nombre = "Nombre";
+        $apellido = "Apellido";
+    }
+
+    // Verificar si el userType está disponible en la sesión
+    if (isset($_SESSION['userType'])) {
+        // Obtener el userType del usuario de la sesión
+        $userType = $_SESSION['userType'];
+    } else {
+        // Si el userType no está disponible en la sesión, establecer un valor predeterminado o manejar el error según sea necesario
+        $userType = "Tipo de usuario";
+    }
+} else {
+    // El usuario no ha iniciado sesión o la información del usuario no está disponible en la sesión
+    $nombre_de_usuario = null;
+    $nombre = "Nombre";
+    $apellido = "Apellido";
+    $userType = "Tipo de usuario";
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Aquí va tu código de encabezado -->
+</head>
+<body>
+    <!-- Aquí va tu código HTML, puedes usar $nombre, $apellido y $userType para mostrar la información del usuario -->
+</body>
+</html>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -60,13 +107,13 @@
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0 show" href="#" data-bs-toggle="dropdown" aria-expanded="true">
                         <img src="../img/OIG.E3CuaSTKz.jpg" id="foto_perfil" alt="Profile" class="rounded-circle">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">Instructor</span>
+                        <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo $nombre . ' ' .$apellido; ?></span>
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class=" dropdown-menu dropdown-menu-end dropdown-menu-arrow profile " data-popper-placement="bottom-end">
                         <li class="dropdown-header">
-                            <h6>Alex Cortés</h6>
-                            <span>Instructor</span>
+                            <h6><?php echo $nombre . ' ' .$apellido; ?></h6>
+                            <span><?php echo $userType; ?></span>
                         </li>
                         <li>
                             <hr class="dropdown-divider">

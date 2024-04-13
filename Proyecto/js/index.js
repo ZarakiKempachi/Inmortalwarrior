@@ -90,18 +90,27 @@ $(document).ready(function () {
 
 
 
-//Registro alumnos
 $(document).ready(function () {
     // Manejar el envío del formulario usando AJAX
     $(document).on('click', '#formularioRegistroAlumnos', function (e) {
         e.preventDefault();
         // Obtener los valores del formulario
-        let firstname = $('#fname').val();
-        let lname = $('#lname').val();
-        let uname = $('#username').val();
-        let emailAlumno = $('#emailAlumno').val();
-        let passAdmin = $('#password').val();
-        let idBox = $('#boxes').val();
+        let firstname = $('#fname').val().trim();
+        let lname = $('#lname').val().trim();
+        let uname = $('#username').val().trim();
+        let emailAlumno = $('#emailAlumno').val().trim();
+        let passAdmin = $('#password').val().trim();
+        let idBox = $('#boxes').val().trim();
+
+        // Validar que todos los campos estén completos
+        if (firstname === "" || lname === "" || uname === "" || emailAlumno === "" || passAdmin === "" || idBox === "") {
+            swal({
+                title: "Campos incompletos!",
+                text: "Por favor, complete todos los campos.",
+                icon: "warning",
+            });
+            return; // Evitar que se ejecute el resto del código si hay campos vacíos
+        }
 
         // Realizar la solicitud AJAX
         $.ajax({

@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include '../modulos/headerAdmin.php';
 ?>
 <section class="bg-white" id="pagina_wods">

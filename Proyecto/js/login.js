@@ -53,3 +53,24 @@ $(document).ready(function(){
         });
     });
 });
+
+    // Comprueba si la casilla de verificación está marcada y guarda la contraseña en localStorage
+    $(document).ready(function() {
+      $('#rememberPasswordCheck').change(function() {
+        if ($(this).is(':checked')) {
+          // Si la casilla está marcada, guarda la contraseña en localStorage
+          localStorage.setItem('rememberedPassword', $('#passLogin').val());
+        } else {
+          // Si la casilla está desmarcada, elimina la contraseña guardada en localStorage
+          localStorage.removeItem('rememberedPassword');
+        }
+      });
+
+      // Restaura la contraseña si está guardada en localStorage al cargar la página
+      let rememberedPassword = localStorage.getItem('rememberedPassword');
+      if (rememberedPassword) {
+        $('#passLogin').val(rememberedPassword);
+        $('#rememberPasswordCheck').prop('checked', true);
+      }
+    });
+
