@@ -32,6 +32,7 @@
         <script src="../js/clases.js"></script>
         <script src="../js/calendarioAdmin.js"></script>
         <script src="../js/general.js"></script>
+        <script src="../js/pr.js"></script>
         <link rel="stylesheet" href="../css/calendario.css">
         
     </body>
