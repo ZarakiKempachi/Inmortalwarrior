@@ -466,3 +466,10 @@ align-items: center;
 # Registro PR
 --------------------------------------------------------------*/
 
+.bi-arrow-left{
+  font-size: 1.5rem
+}
+/* Estilo para el botón cuando se cambia a Instructor */
+.cambiado {
+  background-color: green !important;
+}

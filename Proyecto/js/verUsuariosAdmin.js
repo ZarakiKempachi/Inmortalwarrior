@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // Maneja el clic en el botón de borrarUsuario
-    $(document).on('click', '#borrarUsuario', function() {
+    $(document).on('click', '.borrarUsuario', function() {
         let idUsuario = $(this).data('id');  // Obtiene el ID del usuario
         let row = $(this).closest('tr');  // Obtiene la fila de la tabla
         
@@ -42,10 +42,10 @@ $(document).ready(function() {
         });
     });
 
-
     // Manejar el clic para cambiar a Instructor
-    $(document).on('click', '#cambiarInstructor', function() {
-        let idUsuario = $(this).data('id');  // Obtiene el ID del usuario
+    $(document).on('click', '.cambiarInstructor', function() {
+        let boton = $(this); // Guarda una referencia al botón
+        let idUsuario = boton.data('id');  // Obtiene el ID del usuario
         
         swal({
             title: "¿Estás seguro de que deseas cambiar a este usuario a Instructor?",
@@ -61,6 +61,9 @@ $(document).ready(function() {
                     dataType: 'json',
                     success: function(response) {
                         if (response.success) {
+                            // Cambia el color y el texto del botón
+                            boton.addClass('cambiado').text('Instructor');
+                            
                             swal("Usuario cambiado a Instructor", response.message, "success");
                         } else {
                             swal("Error", response.message, "error");
@@ -74,5 +77,4 @@ $(document).ready(function() {
             }
         });
     });
-    
 });

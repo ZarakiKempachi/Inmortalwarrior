@@ -1,7 +1,9 @@
 <?php
 include '../modulos/headerAdmin.php';
+
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
+
 
 $usuarios = obtenerUsuarios();
 echo '<div class="container general">';
@@ -26,25 +28,31 @@ foreach ($usuarios as $usuario) {
     echo '<td>' . $usuario['Apellido'] . '</td>';
     echo '<td>' . $usuario['Email'] . '</td>';
     echo '<td>' . $usuario['Fecha_Creacion'] . '</td>';
-    
-    echo '<td><button id="borrarUsuario" class="btn btn-secondary" data-id="' . $usuario['ID_Usuario'] . '">Borrar</button></td>';
+
+    echo '<td><button class=" borrarUsuario btn btn-secondary" data-id="' . $usuario['ID_Usuario'] . '">Borrar</button></td>';
 
     // Nuevo botón para cambiar el valor de Is_Instructor
-    echo '<td><button id="cambiarInstructor" class="btn btn-secondary" data-id="' . $usuario['ID_Usuario'] . '">Activar Instructor</button></td>';
-    
+    echo '<td><button  class="cambiarInstructor btn btn-secondary" data-id="' . $usuario['ID_Usuario'] . '">Activar Instructor</button></td>';
+
     echo '</tr>';
 }
 echo '</tbody>';
 echo '</table>';
 echo '</div>';
 
-function obtenerUsuarios(){
+function obtenerUsuarios()
+{
+    $idBox = $_SESSION['box_id'];
     include '../CRUD/conexion.php';
     $sql = "SELECT usuarios.*, boxes.Nombre AS nombre_box
-            FROM usuarios
-            INNER JOIN boxes ON usuarios.ID_Boxes = boxes.ID_Boxes
-            WHERE usuarios.ID_Boxes = 13";
-    $resultado = $conexion->query($sql);
+        FROM usuarios
+        INNER JOIN boxes ON usuarios.ID_Boxes = boxes.ID_Boxes
+        WHERE usuarios.ID_Boxes = ? ORDER BY ID_Usuario";
+    $stmt = $conexion->prepare($sql);
+    $stmt->bind_param("i", $idBox);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
+    
     if (!$resultado) {
         die("Error en la consulta: " . $conexion->error);
     }
@@ -58,5 +66,7 @@ function obtenerUsuarios(){
 
     return $usuarios;
 }
+
+
 include '../modulos/footer.php';
 ?>

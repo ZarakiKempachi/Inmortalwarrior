@@ -2,6 +2,7 @@
 include '../modulos/header.php';
 ?>
 <section class="bg-white" id="pagina_wods">
+    
     <div class="container mt-5">
         <div class="row">
             <div class="wods col-md-6 col-lg-4 mb-4">

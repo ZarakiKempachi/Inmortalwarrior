@@ -15,6 +15,7 @@ if ($resultado->num_rows > 0) {
     $box = $resultado->fetch_assoc();
 ?>
 <section class="py-5 bg-white general">
+<a href="#" onclick="history.back();"  class=" btn  "><i class="bi  bi-arrow-left " ></i></a>
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 d-flex align-items-stretch">
             <!-- Imagen del box -->

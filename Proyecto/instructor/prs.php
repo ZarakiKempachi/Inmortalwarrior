@@ -1,5 +1,5 @@
 <?php
-include '../modulos/header.php';
+include '../modulos/headerInstructor.php';
 include '../CRUD/conexion.php';
 
 // Verificar si el ID de usuario está disponible

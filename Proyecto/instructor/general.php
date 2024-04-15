@@ -1,4 +1,4 @@
-<?php include '../modulos/header.php'; ?>
+<?php include '../modulos/headerInstructor.php'; ?>
 
 <div class="general container mt-5">
 <a href="#" onclick="history.back();"  class=" btn  "><i class="bi  bi-arrow-left " ></i></a>

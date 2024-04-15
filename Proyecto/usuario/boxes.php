@@ -57,16 +57,17 @@ if ($resultado_pagina->num_rows > 0) {
             foreach ($boxes as $box) {
             ?>
                 <div class="col mb-5 cuadrosBox">
+                
                     <a class="detalles-box" href="detalles_box.php?id=<?php echo $box['ID_Boxes']; ?>">
-                        <div class="card h-100">
+                        <div class="card h-100 w-120">
                             <img class="card-img-top" src="../../img/<?php echo $box['Foto']; ?>" alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="tituloBox"><?php echo $box['Nombre']; ?></h5>
-                                    <p><?php echo $box['Direccion']; ?></p>
-                                    <p>Teléfono: <?php echo $box['Telefono']; ?></p>
-                                    <p>Email: <?php echo $box['Email']; ?></p>
-                                    <!-- Agrega más detalles según sea necesario -->
+                                    <p class="text-start"><strong>Dirección:</strong><?php echo $box['Direccion']; ?></p>
+                                    <p class="text-start "><strong>Teléfono:</strong><?php echo $box['Telefono']; ?></p>
+                                    <p class="text-start"><strong>Email:</strong><?php echo $box['Email']; ?></p>
+                                    
                                 </div>
                             </div>
                         </div>

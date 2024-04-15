@@ -35,15 +35,6 @@ if (isset($_SESSION['username'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Aquí va tu código de encabezado -->
-</head>
-<body>
-    <!-- Aquí va tu código HTML, puedes usar $nombre, $apellido y $userType para mostrar la información del usuario -->
-</body>
-</html>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -54,6 +45,7 @@ if (isset($_SESSION['username'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- JS para iconos del pie de página -->
     <script src="https://kit.fontawesome.com/79fad8c5f9.js" crossorigin="anonymous"></script>
@@ -120,7 +112,7 @@ if (isset($_SESSION['username'])) {
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="../perfilAdmin.php">
+                            <a class="dropdown-item d-flex align-items-center" href="../instructor/perfil.php">
                                 <i class="bi bi-person"></i>
                                 <span>Mi perfil</span>
                             </a>

@@ -141,7 +141,7 @@ $(document).ready(function () {
                     // Mostrar SweetAlert de advertencia si el usuario ya existe
                     swal({
                         title: "Usuario existente!",
-                        text: "El usuario ya existe, por favor, elija otro nombre de usuario",
+                        text: "El el nombre de usuario o el correo electrónico ya existe, por favor, elija otro nombre de usuario o correo electrónico",
                         icon: "warning",
                     });
                 }
