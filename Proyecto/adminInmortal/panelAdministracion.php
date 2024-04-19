@@ -24,7 +24,7 @@
 <div class="container mt-5">
     <div class="d-flex justify-content-between">
         <h1>Panel de Administración</h1>
-        <a class="btn btn-dark h-50" href="../index.php">Volver a la página principal</a>
+        <a class="btn btnGlobal h-50" href="../index.php">Volver a la página principal</a>
     </div>
     <ul class="nav nav-tabs">
         <li class="nav-item">
