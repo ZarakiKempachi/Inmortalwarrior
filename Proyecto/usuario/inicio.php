@@ -63,7 +63,7 @@ include '../modulos/header.php';
               <div class="member aos-init aos-animate" data-aos="zoom-in">
                 <div class="member-info text-center">
                   <h4 class="text-center"><strong>Noticias</h4></strong>
-                  <span>Oihana Moya da positivo en los CrossFit Games</span>
+                  <span >Oihana Moya da positivo en los CrossFit Games</span>
                   <p>La alavesa Ohiana Moya ha dado positivo, según ha comunicado CrossFit Games, por Ostarine y Metabolitos de GW1516 en un test realizado en semifinales de la competición. </p>
                 </div>
               </div>
@@ -73,7 +73,7 @@ include '../modulos/header.php';
                 <div class="member aos-init aos-animate" data-aos="zoom-in">
                   <div class="member-info text-center">
                     <h4 class="text-center"><strong>Ranking</h4></strong>
-                    <span>Atletas Top</span>
+                    <span >Atletas Top</span>
                     <p>Box | Nombre | Peso | Edad   <br>               
                         Dragon box | Joaquin Perez | 85 kg | 25 años
                         Crossfit Altea | Laura Córdoba | 65 kg | 30 años
@@ -87,7 +87,7 @@ include '../modulos/header.php';
               <div class="member aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
                 <div class="member-info text-center">
                   <h4 class="text-center"><strong>Movilidad</h4></strong>
-                  <span>Muñecas</span>
+                  <span style="color: #383838 !important;">Muñecas</span>
                   <p>De rodillas al suelo, colocamos los antebrazos encima de la pelota o foam roller y rodamos desde codo a muñecas. <br>En posición de cuadrupedia movilizamos nuestras muñecas con el peso de nuestro cuerpo hacia delante y hacia atrás, hacia los lados o realizando círculos. También podemos apoyar el dorso de la mano. </p>
                   
                 </div>

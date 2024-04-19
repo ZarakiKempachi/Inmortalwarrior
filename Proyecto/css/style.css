@@ -347,7 +347,7 @@ align-items: center;
   text-transform: uppercase;
   font-weight: 400;
   margin-bottom: 15px;
-  color: #7cc576;
+  color: #152635 !important;
 }
 
 .team .member .member-info p,table {
@@ -473,3 +473,5 @@ align-items: center;
 .cambiado {
   background-color: green !important;
 }
+
+
