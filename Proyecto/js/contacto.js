@@ -10,7 +10,7 @@ $(document).ready(function () {
         // Make an AJAX request
         $.ajax({
             type: "POST",
-            url: "CRUD/enviar_formulario.php",
+            url: "../../CRUD/enviar_formulario.php",
             data: {
                 nombre: nombre,
                 email: email,

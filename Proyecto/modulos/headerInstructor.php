@@ -17,7 +17,13 @@ if (isset($_SESSION['username'])) {
         $nombre = "Nombre";
         $apellido = "Apellido";
     }
-
+    if (isset($_SESSION['email'])) {
+        // Obtener el email del usuario de la sesión
+        $email = $_SESSION['email'];
+    } else {
+        // Si el email no está disponible en la sesión, establecer un valor predeterminado o manejar el error según sea necesario
+        $email = "Email";
+    }
     // Verificar si el userType está disponible en la sesión
     if (isset($_SESSION['userType'])) {
         // Obtener el userType del usuario de la sesión

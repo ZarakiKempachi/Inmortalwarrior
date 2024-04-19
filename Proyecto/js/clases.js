@@ -18,6 +18,7 @@ $(document).ready(function(){
                     icon: "success"
                 
                 });
+                $('#crearClaseForm')[0].reset();
             },
             error: function(xhr, status, error){
                 swal({

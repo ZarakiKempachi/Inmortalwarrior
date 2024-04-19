@@ -6,7 +6,7 @@ include '../modulos/headerAdmin.php';
             <div class="container mt-5">
                 <div class="row">
                     <div class="perfil col-md-6 col-lg-4  mb-4">
-                        <a href="general.php" class="image-container">
+                        <a href="../admin/generalAdmin.php" class="image-container">
                             <img src="../img/perfil.jpg" class="img-thumbnail" alt="...">
                             <div class="overlay-text">
                                 General
@@ -14,21 +14,14 @@ include '../modulos/headerAdmin.php';
                         </a>
                     </div>
                     <div class="perfil col-md-6 col-lg-4  mb-4">
-                        <a href="prs.php" class="image-container">
+                        <a href="../admin/prsAdmin.php" class="image-container">
                             <img src="../img/prs.jpg" class="img-thumbnail" alt="...">
                             <div class="overlay-text">
                                 PR`S
                             </div>
                         </a>
                     </div>
-                    <div class="perfil col-md-6 col-lg-4  mb-4">
-                        <a href="calendario.php" class="image-container">
-                            <img src="../img/calendario.jpg" class="img-thumbnail" alt="...">
-                            <div class="overlay-text">
-                                Calendario
-                            </div>
-                        </a>
-                    </div>
+                    
 
                 </div>
             </div>

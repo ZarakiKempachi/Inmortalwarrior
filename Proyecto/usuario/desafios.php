@@ -29,6 +29,7 @@ $sql_pagina = "SELECT * FROM wods WHERE tipo = 'Desafios' LIMIT $inicio, $result
 $result_pagina = $conexion->query($sql_pagina);
 ?>
 <section class="general bg-white my-2">
+<a href="#" onclick="history.back();"  class=" btn  "><i class="bi  bi-arrow-left " ></i></a>
     <div class="container mt-5">
         <h2 class="text-center">Desafios</h2>
         <div class="text-center">

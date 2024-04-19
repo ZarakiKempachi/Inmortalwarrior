@@ -32,9 +32,9 @@ $result_pagina = $conexion->query($sql_pagina);
 <section class="general bg-white my-2">
 <a href="#" onclick="history.back();"  class=" btn  "><i class="bi  bi-arrow-left " ></i></a>
     <div class="container mt-5">
-        <h2 class="text-center">The Heroes</h2>
+        <h2 class="text-center">The Gilrs</h2>
         <div class="text-center">
-            <p>Aquí puedes encontrar todos los wod`s de "The Heroes".</p>
+            <p>Aquí puedes encontrar todos los wod`s de "The Girls".</p>
         </div>
 
         <div id="data-table-basic_filter" class="d-flex justify-content-center gap-3">

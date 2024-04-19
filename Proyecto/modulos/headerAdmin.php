@@ -1,34 +1,34 @@
 
 <?php
-// Iniciar la sesión para acceder a las variables de sesión
 session_start();
 
-// Verificar si el usuario ha iniciado sesión correctamente
 if (isset($_SESSION['username'])) {
-    // El usuario ha iniciado sesión, obtener el nombre de usuario de la sesión
+   
     $nombre_de_usuario = $_SESSION['username'];
 
     // Verificar si el nombre y el apellido están disponibles en la sesión
     if (isset($_SESSION['nombre']) && isset($_SESSION['apellido'])) {
-        // Obtener el nombre y el apellido del usuario de la sesión
+       
         $nombre = $_SESSION['nombre'];
         $apellido = $_SESSION['apellido'];
     } else {
-        // Si el nombre o el apellido no están disponibles en la sesión, establecer valores predeterminados o manejar el error según sea necesario
         $nombre = "Nombre";
         $apellido = "Apellido";
     }
-
+    if (isset($_SESSION['email'])) {
+        $email = $_SESSION['email'];
+    } else {
+        
+        $email = "Email";
+    }
     // Verificar si el userType está disponible en la sesión
     if (isset($_SESSION['userType'])) {
-        // Obtener el userType del usuario de la sesión
         $userType = $_SESSION['userType'];
     } else {
-        // Si el userType no está disponible en la sesión, establecer un valor predeterminado o manejar el error según sea necesario
         $userType = "Tipo de usuario";
     }
 } else {
-    // El usuario no ha iniciado sesión o la información del usuario no está disponible en la sesión
+    
     $nombre_de_usuario = null;
     $nombre = "Nombre";
     $apellido = "Apellido";
@@ -116,7 +116,7 @@ if (isset($_SESSION['username'])) {
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="../perfilAdmin.php">
+                            <a class="dropdown-item d-flex align-items-center" href="../admin/perfilAdmin.php">
                                 <i class="bi bi-person"></i>
                                 <span>Mi perfil</span>
                             </a>
