@@ -10,7 +10,7 @@ function mostrarSwalInscripcion(calendar, claseId, formattedHorario) {
         }
     }).then((willInscribe) => {
         if (willInscribe) {
-            // Aquí puedes realizar una solicitud AJAX al servidor para registrar al usuario en la clase
+            
             $.ajax({
                 url: '../CRUD/reservarClase.php',
                 method: 'POST',
@@ -46,7 +46,7 @@ function mostrarSwalInscripcion(calendar, claseId, formattedHorario) {
             });
         } else {
             console.log('No inscrito');
-            // No hacer nada si el usuario elige cancelar la inscripción
+            
         }
     });
 }
@@ -94,14 +94,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 let horario = info.event.start;
                 let claseId = info.event.id;
                 let formattedHorario = horario.toLocaleString(undefined, {
-                    weekday: 'long', // Día de la semana (por ejemplo, "jueves")
-                    month: 'long',   // Mes (por ejemplo, "marzo")
-                    day: 'numeric',  // Día del mes (por ejemplo, "21")
-                    hour: 'numeric', // Hora (por ejemplo, "21")
-                    minute: 'numeric'// Minutos (por ejemplo, "20")
+                    weekday: 'long', 
+                    month: 'long',   
+                    day: 'numeric',  
+                    hour: 'numeric', 
+                    minute: 'numeric'
                 });
 
-                // Aquí puedes realizar una solicitud AJAX al servidor para verificar si el usuario está inscrito en la clase
+                
                 $.ajax({
                     url: '../CRUD/verificarInscripcion.php',
                     method: 'POST',
@@ -219,7 +219,7 @@ function mostrarListaUsuariosInscritos(calendar, claseId, formattedHorario) {
                     }
                 }).then((willDelete) => {
                     if (willDelete) {
-                        // Aquí puedes realizar una solicitud AJAX al servidor para eliminar al usuario de la clase
+                        
                         $.ajax({
                             url: '../CRUD/borrar_usuario_clase.php',
                             method: 'POST',

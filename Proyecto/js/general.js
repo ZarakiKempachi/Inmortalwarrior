@@ -10,7 +10,7 @@ $(document).ready(function() {
         let newPassword = $('#newPassword').val();
         let confirmPassword = $('#confirmPassword').val();
 
-        // Enviar la solicitud AJAX
+        
         $.ajax({
             type: 'POST',
             url: '../CRUD/cambio_contrasena.php',
@@ -34,7 +34,7 @@ $(document).ready(function() {
             }
         })
         .fail(function(data) {
-            // Manejar errores de la solicitud AJAX
+            
             console.error('Error al enviar la solicitud AJAX');
         });
     });

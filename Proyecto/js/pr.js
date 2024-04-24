@@ -24,7 +24,7 @@ $(document).ready(function() {
             },
             dataType: "json",
             success: function(response) {
-                console.log(response); // Mostrar la respuesta en la consola del navegador
+                console.log(response); 
                 if (response.success) {
                     // Si la operación fue exitosa, agregar los datos a la tabla
                     $("#tbody-resultados").append("<tr><td>" + response.data.tipo + "</td><td>" + response.data.resultado + "</td><td>" + response.data.formato + "</td></tr>");

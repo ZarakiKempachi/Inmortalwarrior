@@ -97,9 +97,7 @@ if (isset($_SESSION['username'])) {
                     <li class="nav-item">
                         <a href="../usuario/boxes.php" class="nav-link text-dark">Boxes</a>
                     </li>
-                    <!-- <li class="nav-item dropdown">
-                        <a href="../usuario/tecnicas.php" class="nav-link text-dark">Técnicas de Crossfit</a>
-                    </li> -->
+                    
                     <li class="nav-item">
                         <a href="../usuario/wods.php" class="nav-link text-dark">Wod´s</a>
                     </li>
@@ -148,7 +146,7 @@ if (isset($_SESSION['username'])) {
                             </a>
                         </li>
 
-                    </ul><!-- End Profile Dropdown Items -->
+                    </ul>
                 </a>
             
         </div>

@@ -7,7 +7,7 @@ $(document).ready(function () {
         let email = $('#email').val();
         let mensaje = $('#mensaje').val();
         
-        // Make an AJAX request
+        
         $.ajax({
             type: "POST",
             url: "../../CRUD/enviar_formulario.php",
@@ -24,7 +24,7 @@ $(document).ready(function () {
                     icon: "success",
                 });
                 
-                // Clear the form fields
+                
                 $('#nombre').val("");
                 $('#email').val("");
                 $('#mensaje').val("");

@@ -9,7 +9,7 @@ $(document).ready(function(){
         // Realizar la solicitud AJAX
         $.ajax({
             type: "POST",
-            url: "../CRUD/iniciarSesion.php", // Cambia la URL al archivo que maneja el inicio de sesión
+            url: "../CRUD/iniciarSesion.php", 
             dataType: "json",
             data: {
                 username: username,

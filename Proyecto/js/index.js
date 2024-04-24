@@ -1,8 +1,8 @@
 //Registro de box
 $(document).ready(function () {
-    // Handle form submission using AJAX
+    
     $(document).on('click', '#formularioRegistro', function (e) {
-        e.preventDefault(); // Prevent the form from submitting normally
+        e.preventDefault(); 
         
         // Get the values from the form
         let nombreBox = $('#nombreBox').val();
@@ -35,7 +35,7 @@ $(document).ready(function () {
                 passAdmin: passAdmin,
             },
             success: function (response) {
-                // Check if the response contains an error message
+                
                 if (response.includes("El nombre del box ya está en uso")) {
                     swal({
                         title: "Información",
@@ -112,7 +112,7 @@ $(document).ready(function () {
             return; // Evitar que se ejecute el resto del código si hay campos vacíos
         }
 
-        // Realizar la solicitud AJAX
+       
         $.ajax({
             type: "POST",
             url: "../CRUD/registroAlumno.php",
@@ -138,7 +138,7 @@ $(document).ready(function () {
                     $('#password').val("");
                     $('#boxes').val("");
                 } else {
-                    // Mostrar SweetAlert de advertencia si el usuario ya existe
+                   
                     swal({
                         title: "Usuario existente!",
                         text: "El el nombre de usuario o el correo electrónico ya existe, por favor, elija otro nombre de usuario o correo electrónico",
@@ -147,7 +147,7 @@ $(document).ready(function () {
                 }
             },
             error: function (error) {
-                // Manejar errores en la solicitud AJAX
+                
                 console.log(error.responseText);
                 alert("Error en el registro");
             }
@@ -162,10 +162,10 @@ $(document).ready(function () {
         $("#ciudades").change(function(){
             let ciudadSeleccionada = $(this).val();
             
-            // Realizar una solicitud AJAX para obtener las cajas de la ciudad seleccionada
+           
             $.ajax({
-                type: "POST",  // Puedes ajustar esto según tu necesidad
-                url: "../CRUD/boxes.php",  // Ajusta la URL según tu estructura
+                type: "POST",  
+                url: "../CRUD/boxes.php",  
                 data: { ciudad: ciudadSeleccionada },
                 success: function(response){
                     // Limpiar y agregar las nuevas opciones al segundo select (boxes)
@@ -177,6 +177,9 @@ $(document).ready(function () {
             });
         });
     });
+
+
+
 //Registro del superadmin
     // $(document).ready(function () {
     //     // Manejar el envío del formulario usando AJAX

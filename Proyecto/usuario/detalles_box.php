@@ -45,6 +45,7 @@ if ($resultado->num_rows > 0) {
 </section>
 
 <script>
+    //función creada con chatgpt y documentacion de google maps
 function initMap() {
     let box_<?php echo $box['ID_Boxes']; ?> = { lat: <?php echo $box['Latitud']; ?>, lng: <?php echo $box['Longitud']; ?> };
     let map_<?php echo $box['ID_Boxes']; ?> = new google.maps.Map(document.getElementById('map_<?php echo $box['ID_Boxes']; ?>'), {

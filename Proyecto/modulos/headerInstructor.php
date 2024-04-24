@@ -106,7 +106,7 @@ if (isset($_SESSION['username'])) {
                     <a class="nav-link nav-profile d-flex align-items-center pe-0 show" href="#" data-bs-toggle="dropdown" aria-expanded="true">
                         <img src="../img/OIG.E3CuaSTKz.jpg" id="foto_perfil" alt="Profile" class="rounded-circle">
                         <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo $nombre . ' ' .$apellido; ?></span>
-                    </a><!-- End Profile Iamge Icon -->
+                    </a>
 
                     <ul class=" dropdown-menu dropdown-menu-end dropdown-menu-arrow profile " data-popper-placement="bottom-end">
                         <li class="dropdown-header">
