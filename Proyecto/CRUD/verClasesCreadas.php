@@ -1,9 +1,9 @@
-<!--  -->
+
 <?php
-// Incluir el archivo de conexión a la base de datos
+
 include 'conexion.php'; 
 
-// Consulta SQL para obtener las clases creadas con información adicional
+
 $sql = "SELECT Nombre, Fecha, Hora, ID_Boxes, ID_Wods, ID_Usuario FROM clases";
 
 // Ejecutar la consulta
@@ -21,7 +21,7 @@ if ($resultado->num_rows > 0) {
     echo "<th>ID Box</th>";
     echo "<th>ID WOD</th>";
     echo "<th>ID Usuario</th>";
-    // Puedes agregar más columnas si lo necesitas
+    
     echo "</tr>";
     echo "</thead>";
     echo "<tbody>";
@@ -35,7 +35,7 @@ if ($resultado->num_rows > 0) {
         echo "<td>" . $fila["ID_Boxes"] . "</td>";
         echo "<td>" . $fila["ID_Wods"] . "</td>";
         echo "<td>" . $fila["ID_Usuario"] . "</td>";
-        // Puedes mostrar más datos si lo necesitas
+        
         echo "</tr>";
     }
     echo "</tbody>";
@@ -45,6 +45,6 @@ if ($resultado->num_rows > 0) {
     echo "No se encontraron clases creadas.";
 }
 
-// Cerrar la conexión a la base de datos
+
 $conn->close();
 ?>

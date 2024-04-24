@@ -47,7 +47,7 @@ function obtenerUsuarios(){
         $usuarios[] = $fila;
     }
 
-    // Cerrar la conexión a la base de datos
+    
     $conexion->close();
 
     return $usuarios;

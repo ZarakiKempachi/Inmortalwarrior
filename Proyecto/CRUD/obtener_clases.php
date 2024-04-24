@@ -12,7 +12,6 @@ $sql = "SELECT c.`ID_Clases`, c.`Nombre`, c.`Horario`, c.`ID_Usuario`, c.`ID_Wod
 $resultado = mysqli_query($conexion, $sql);
 
 if ($resultado) {
-    // Inicializar un array para almacenar los datos de las clases
     $clases = array();
 
     // Recorrer los resultados y agregar cada fila al array de clases
@@ -24,10 +23,10 @@ if ($resultado) {
     // Devolver los datos en formato JSON
     echo json_encode($clases);
 } else {
-    // Si hubo un error en la consulta, devolver un mensaje de error
+    
     echo json_encode(array('error' => 'Error al obtener las clases desde la base de datos'));
 }
 
-// Cerrar la conexión a la base de datos
+
 mysqli_close($conexion);
 ?>

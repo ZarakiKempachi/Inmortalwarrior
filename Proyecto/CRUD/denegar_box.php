@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php'; // Incluye el archivo de conexión a la base de datos
+include 'conexion.php';
 
 // Verifica si se ha enviado el formulario para denegar un box
 if (isset($_POST['id_box'])) {
@@ -7,25 +7,25 @@ if (isset($_POST['id_box'])) {
     $idBox = $_POST['id_box'];
 
     try {
-        // Ejecuta una sentencia SQL DELETE para eliminar el box
+       
         $sql = "DELETE FROM boxes WHERE ID_Boxes = $idBox";
         if ($conexion->query($sql) === TRUE) {
-            // Envía una respuesta exitosa
+           
             $response = array("success" => true, "message" => "El box ha sido denegado exitosamente.");
         } else {
-            // Envía una respuesta de error
+            
             $response = array("success" => false, "message" => "Error al denegar el box: " . $conexion->error);
         }
     } catch (Exception $e) {
-        // Envía una respuesta de error
+        
         $response = array("success" => false, "message" => "Error: " . $e->getMessage());
     }
 } else {
-    // Envía una respuesta de error si no se recibió el ID del box
+   
     $response = array("success" => false, "message" => "No se recibió el ID del box.");
 }
 
-// Cierra la conexión a la base de datos
+
 $conexion->close();
 
 // Devuelve la respuesta como JSON

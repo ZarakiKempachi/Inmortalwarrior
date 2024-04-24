@@ -1,8 +1,8 @@
 <?php
-include 'conexion.php'; // Incluye el archivo de conexión a la base de datos
+include 'conexion.php'; 
 
 try {
-    // Realiza la consulta para seleccionar los boxes que tienen Is_Solicitud igual a 1
+    
     $sql = "SELECT * FROM boxes WHERE Is_Solicitud = 1";
     $resultado = $conexion->query($sql);
 
@@ -36,6 +36,6 @@ try {
     echo "Error: " . $e->getMessage();
 }
 
-// Cierra la conexión a la base de datos
+
 $conexion->close();
 ?>

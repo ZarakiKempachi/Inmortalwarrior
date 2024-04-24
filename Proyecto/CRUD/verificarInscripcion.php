@@ -16,7 +16,7 @@ $user_id = $_SESSION['user_id'];
 if (isset($_POST['clase_id'])) {
     $clase_id = $_POST['clase_id'];
 
-    // Consulta para verificar si el usuario está inscrito en la clase especificada
+   
     $sql_check_reservation = "SELECT ID_Reservas FROM reservas WHERE ID_Usuario = '$user_id' AND ID_Clases = '$clase_id'";
     $result_check_reservation = $conexion->query($sql_check_reservation);
 
@@ -28,7 +28,7 @@ if (isset($_POST['clase_id'])) {
         $response = array("success" => true, "inscrito" => false);
     }
 
-    // Cerrar conexión
+   
     $conexion->close();
 
     // Establecer cabecera JSON

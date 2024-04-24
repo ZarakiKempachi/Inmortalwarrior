@@ -17,7 +17,7 @@ function crearClase($nombreClase, $horaClase, $fechaClase, $idUsuario, $idBox, $
         die("Conexión fallida: " . mysqli_connect_error());
     }
 
-    // Insertar en la base de datos
+  
     $sql = "INSERT INTO clases (Nombre, Horario, Fecha, ID_Boxes, ID_Wods, ID_Usuario) 
             VALUES ('$nombreClase', '$horaClase', '$fechaClase', $idBox, $wodClase, $idUsuario)";
 
@@ -27,7 +27,7 @@ function crearClase($nombreClase, $horaClase, $fechaClase, $idUsuario, $idBox, $
         $response = array("status" => "error", "message" => "Error al crear clase: " . mysqli_error($conexion));
     }
 
-    // Cerrar la conexión a la base de datos
+    
     mysqli_close($conexion);
 
     // Devolver la respuesta como JSON

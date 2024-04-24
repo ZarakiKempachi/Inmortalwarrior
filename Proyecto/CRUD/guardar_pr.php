@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["tipo-registro"]) && is
         $response['message'] = "Error al guardar los datos en la base de datos";
     }
 
-    // Cerrar la declaración
+ 
     $stmt->close();
    
 }

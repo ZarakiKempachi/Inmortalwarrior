@@ -13,7 +13,7 @@ if (isset($_POST['id_usuario'])) {
     // Vincular parámetros
     $stmt->bind_param("i", $idUsuario);
     
-    // Ejecutar la consulta
+ 
     if ($stmt->execute()) {
         // Éxito: enviar respuesta JSON con éxito
         echo json_encode(array("success" => true, "message" => "El usuario ha sido cambiado a instructor correctamente."));
@@ -22,7 +22,7 @@ if (isset($_POST['id_usuario'])) {
         echo json_encode(array("success" => false, "message" => "Ha ocurrido un error al cambiar el usuario a instructor."));
     }
 
-    // Cerrar la conexión a la base de datos
+    
     $stmt->close();
     $conexion->close();
 } else {

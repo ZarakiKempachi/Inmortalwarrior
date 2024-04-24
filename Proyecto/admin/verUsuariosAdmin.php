@@ -31,7 +31,7 @@ foreach ($usuarios as $usuario) {
 
     echo '<td><button class=" borrarUsuario btn btn-secondary" data-id="' . $usuario['ID_Usuario'] . '">Borrar</button></td>';
 
-    // Nuevo botón para cambiar el valor de Is_Instructor
+    
     echo '<td><button  class="cambiarInstructor btn btn-secondary" data-id="' . $usuario['ID_Usuario'] . '">Activar Instructor</button></td>';
 
     echo '</tr>';
@@ -61,7 +61,7 @@ function obtenerUsuarios()
         $usuarios[] = $fila;
     }
 
-    // Cerrar la conexión a la base de datos
+   
     $conexion->close();
 
     return $usuarios;

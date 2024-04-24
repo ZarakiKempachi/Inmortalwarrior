@@ -37,7 +37,7 @@ $(document).ready(function() {
                         }
                     },
                     error: function(xhr, status, error) {
-                        console.log(xhr.responseText); // Agrega esto para ver la respuesta del servidor
+                        console.log(xhr.responseText); 
                         swal({
                             title: 'Error',
                             text: 'Hubo un error al procesar la solicitud',
@@ -89,7 +89,7 @@ $(document).ready(function() {
                         }
                     },
                     error: function(xhr, status, error) {
-                        console.log(xhr.responseText); // Agrega esto para ver la respuesta del servidor
+                        console.log(xhr.responseText); 
                         swal({
                             title: 'Error',
                             text: 'Hubo un error al procesar la solicitud',
@@ -105,7 +105,7 @@ $(document).ready(function() {
 
 //Borrar usuario
 $(document).ready(function() {
-    // Maneja el clic en el botón de borrarUsuario
+    
     $(document).on('click', '.borrarUsuario', function() {
         let idUsuario = $(this).data('id');  // Obtiene el ID del usuario
         let row = $(this).closest('tr');  // Obtiene la fila de la tabla
@@ -130,7 +130,7 @@ $(document).ready(function() {
                                 title: "Usuario eliminado",
                                 text: response.message,
                                 icon: "success"
-                            }); // Muestra mensaje de éxito
+                            });
                         } else {
                             swal({
                                 title: "El usuario no ha podido ser eliminado",
@@ -140,8 +140,8 @@ $(document).ready(function() {
                         }
                     },
                     error: function(xhr, status, error) {
-                        console.log(xhr.responseText); // Muestra mensaje de error en la consola
-                        alert('Error: ' + error); // Muestra mensaje de error
+                        console.log(xhr.responseText); 
+                        alert('Error: ' + error); 
                     }
                 });
             }
@@ -157,8 +157,8 @@ $(document).ready(function() {
     $(document).on('click', '.borrarBox', function(e) {
         e.preventDefault();
         
-        let idBox = $(this).data('id'); // Obtiene el ID del box
-        let button = $(this); // Almacena una referencia al botón clicado
+        let idBox = $(this).data('id'); 
+        let button = $(this); 
         
         swal({
             title: '¿Estás seguro?',
@@ -191,7 +191,7 @@ $(document).ready(function() {
                         }
                     },
                     error: function(xhr, status, error) {
-                        console.log(xhr.responseText); // Muestra mensaje de error en la consola
+                        console.log(xhr.responseText); 
                         swal({
                             title: 'Error',
                             text: 'Hubo un error al procesar la solicitud',

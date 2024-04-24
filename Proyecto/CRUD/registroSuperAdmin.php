@@ -8,7 +8,7 @@ function registro($username,  $passwd,)
     include 'conexion.php';
     $passwd = password_hash($passwd, PASSWORD_DEFAULT);
 
-    // Establecer la conexión a la base de datos
+   
     $conexion = mysqli_connect($server, $user, $pass, $db);
 
     if (!$conexion) {
@@ -35,7 +35,7 @@ function registro($username,  $passwd,)
         }
     }
 
-    // Cerrar la conexión a la base de datos
+    
     mysqli_close($conexion);
 }
 

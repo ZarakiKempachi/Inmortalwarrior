@@ -6,7 +6,7 @@ include '../CRUD/conexion.php';
 if (isset($_SESSION["user_id"])) {
     $id_usuario = $_SESSION["user_id"];
 
-    // Consultar los datos de la base de datos
+    
     $sql = "SELECT Tipo, Resultado, Formato FROM personal_records WHERE ID_Usuario = ? ORDER BY Tipo ASC";
     $stmt = $conexion->prepare($sql);
     $stmt->bind_param("i", $id_usuario);

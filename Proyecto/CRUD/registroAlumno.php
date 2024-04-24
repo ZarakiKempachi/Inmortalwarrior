@@ -102,7 +102,7 @@ function registro($username, $nombre, $apellidos, $email, $passwd, $id_box)
         }
     }
 
-    // Cerrar la conexión a la base de datos
+    
     mysqli_close($conexion);
 }
 

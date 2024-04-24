@@ -10,9 +10,9 @@ $confirmPassword = isset($_POST['confirmPassword']) ? $_POST['confirmPassword'] 
 // Inicializar la respuesta como un array asociativo
 $response = array();
 
-// Verificar si la solicitud es POST
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verificar si la nueva contraseña coincide con la confirmación
+    
     if ($newPassword === $confirmPassword) {
         // Hashear la nueva contraseña
         $hashedNewPassword = password_hash($newPassword, PASSWORD_DEFAULT);

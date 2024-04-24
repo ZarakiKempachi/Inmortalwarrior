@@ -72,7 +72,7 @@ $result_pagina = $conexion->query($sql_pagina);
             ?>
         </div>
 
-        <!-- Aquí puedes incluir los controles de paginación -->
+        
         
     </div>
 </section>
