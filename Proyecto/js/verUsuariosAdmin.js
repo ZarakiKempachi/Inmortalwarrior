@@ -34,8 +34,8 @@ $(document).ready(function() {
                         }
                     },
                     error: function(xhr, status, error) {
-                        console.log(xhr.responseText); // Muestra mensaje de error en la consola
-                        alert('Error: ' + error); // Muestra mensaje de error
+                        console.log(xhr.responseText); 
+                        alert('Error: ' + error); 
                     }
                 });
             }
@@ -70,8 +70,8 @@ $(document).ready(function() {
                         }
                     },
                     error: function(xhr, status, error) {
-                        console.log(xhr.responseText); // Muestra mensaje de error en la consola
-                        alert('Error: ' + error); // Muestra mensaje de error
+                        console.log(xhr.responseText); 
+                        alert('Error: ' + error); 
                     }
                 });
             }
