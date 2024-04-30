@@ -10,6 +10,7 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <link rel="stylesheet" href="../css/login.css">
+  <link rel="icon" href="img/logo_favi.jpg" type="image/x-icon">
   <link rel="stylesheet" href="../css/style.css">
 
   <title>Login</title>

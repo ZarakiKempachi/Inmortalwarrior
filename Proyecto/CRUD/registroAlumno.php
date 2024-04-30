@@ -87,9 +87,10 @@ function registro($username, $nombre, $apellidos, $email, $passwd, $id_box)
     if ($checkUsernameResult->num_rows > 0 || $checkEmailResult->num_rows > 0) {
         echo json_encode("El nombre de usuario o correo electrónico ya están en uso");
     } else {
+        $foto_predeterminada ="../img/imagenPredeterminada.jpg" ;
         // Insertar en la base de datos
         $insertQuery = "INSERT INTO usuarios (Nombre, Apellido, Email, Username, `Password`, Fecha_Creacion, foto, Is_Admin, Is_Instructor, ID_Boxes) 
-                        VALUES ('$nombre', '$apellidos', '$email', '$username', '$passwd', NOW(), '', 0, 0, '$id_box')";
+                        VALUES ('$nombre', '$apellidos', '$email', '$username', '$passwd', NOW(), '$foto_predeterminada', 0, 0, '$id_box')";
 
         $response = $conexion->query($insertQuery);
 

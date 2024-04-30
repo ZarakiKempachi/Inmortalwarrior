@@ -34,7 +34,7 @@
         <script src="../js/general.js"></script>
         <script src="../js/pr.js"></script>
         <script src="../js/contacto.js"></script>
-        <link rel="stylesheet" href="../css/calendario.css">
+        
         
     </body>
     
