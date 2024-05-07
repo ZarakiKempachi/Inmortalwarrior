@@ -57,7 +57,7 @@ if ($resultado_pagina->num_rows > 0) {
             foreach ($boxes as $box) {
             ?>
                 <div class="col mb-5 cuadrosBox">
-                
+
                     <a class="detalles-box" href="detalles_box.php?id=<?php echo $box['ID_Boxes']; ?>">
                         <div class="card h-100 w-120">
                             <img class="card-img-top" src="../../img/<?php echo $box['Foto']; ?>" alt="...">
@@ -66,8 +66,12 @@ if ($resultado_pagina->num_rows > 0) {
                                     <h5 class="tituloBox"><?php echo $box['Nombre']; ?></h5>
                                     <p class="text-start"><strong>Dirección:</strong><?php echo $box['Direccion']; ?></p>
                                     <p class="text-start "><strong>Teléfono:</strong><?php echo $box['Telefono']; ?></p>
-                                    <p class="text-start"><strong>Email:</strong><?php echo $box['Email']; ?></p>
-                                    
+                                    <p class="text-start"><strong>Email:</strong></p>
+                                    <?php
+                                                                                    $email_parts = explode('@', $box['Email']);
+                                                                                    echo $email_parts[0] . '@<br>' . $email_parts[1];
+                                                                                    ?>
+
                                 </div>
                             </div>
                         </div>
