@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-03-2024 a las 11:39:33
+-- Tiempo de generación: 07-05-2024 a las 23:11:16
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -37,47 +37,47 @@ CREATE TABLE `boxes` (
   `Localidad` varchar(50) NOT NULL,
   `Descripcion` varchar(255) NOT NULL,
   `Foto` varchar(50) DEFAULT NULL,
-  `Is_Solicitud` tinyint(1) NOT NULL
+  `Is_Solicitud` tinyint(1) NOT NULL,
+  `Latitud` decimal(10,8) NOT NULL,
+  `Longitud` decimal(11,8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `boxes`
 --
 
-INSERT INTO `boxes` (`ID_Boxes`, `Nombre`, `Direccion`, `Telefono`, `Email`, `Horario`, `Localidad`, `Descripcion`, `Foto`, `Is_Solicitud`) VALUES
-(1, 'dragon box', 'C/profesor motos guirao,2 local 1', 2147483647, 'alexcortesronda63@gmail.com', '8:00 a 21:00', 'Granada', 'aaaa', '', 0),
-(12, 'Crossfit Altea', 'Calle almendras', 345345345, 'crossfitaltea@gmail.com', '6:00 - 21:00', 'Altea', 'asdasd', NULL, 0),
-(13, 'Animal Box', 'C/ Camino la huerta edf. la cruz II, 9 Local D 9', 2147483647, 'alexcortesronda63@gmail.com', '6:00 - 21:00', 'Granada', 'asadasd', NULL, 0),
-(16, 'CrossFit Elite', 'Calle del Deporte 123', 123456789, 'info@crossfitelite.com', 'Lunes a Viernes: 6am - 10pm', 'Ciudad Ficticia', 'El mejor lugar para entrenar y superar tus límites.', 'crossfit_elite.jpg', 0),
-(17, 'Iron Gym', 'Avenida de la Fuerza 456', 987654321, 'contacto@irongym.com', 'Lunes a Sábado: 5am - 11pm', 'Otra Ciudad', 'Gimnasio especializado en levantamiento de pesas y entrenamiento funcional.', 'iron_gym.jpg', 0),
-(18, 'FitBox', 'Calle de la Salud 789', 111222333, 'info@fitbox.com', 'Lunes a Domingo: 7am - 9pm', 'Ciudad Principal', 'Entrenamientos variados para todas las edades y niveles de condición física.', 'fitbox.jpg', 0),
-(19, 'Power Fitness Center', 'Paseo del Deporte 456', 444555666, 'contacto@powerfitness.com', 'Lunes a Viernes: 6am - 11pm', 'Otra Ciudad', 'Centro de fitness con equipos de última generación y entrenadores certificados.', 'power_fitness.jpg', 0),
-(20, 'StrongBody CrossFit', 'Avenida de la Resistencia 789', 777888999, 'info@strongbodycrossfit.com', 'Lunes a Sábado: 5am - 10pm', 'Ciudad Grande', 'Ambiente amigable y programas de entrenamiento desafiantes para todos los niveles.', 'strongbody_crossfit.jpg', 0),
-(21, 'Vitality Gym', 'Calle de la Vitalidad 123', 123987456, 'info@vitalitygym.com', 'Lunes a Domingo: 6am - 10pm', 'Otra Ciudad', 'Gimnasio completo con clases grupales y entrenamiento personalizado.', 'vitality_gym.jpg', 0),
-(22, 'Endurance Fitness Studio', 'Avenida de la Resistencia 456', 789456123, 'info@endurancefitness.com', 'Lunes a Viernes: 7am - 10pm', 'Ciudad Ficticia', 'Enfoque en entrenamientos de resistencia y cardio para mejorar la salud y el rendimiento.', 'endurance_fitness.jpg', 0),
-(23, 'Eagles Nest CrossFit', 'Calle de la Fortaleza 789', 555666777, 'contacto@eaglesnestcrossfit.com', 'Lunes a Sábado: 6am - 9pm', 'Otra Ciudad', 'CrossFit box con entrenadores experimentados y comunidad acogedora.', 'eaglesnest_crossfit.jpg', 0),
-(24, 'Grit & Grind Fitness', 'Paseo de la Determinación 123', 123456789, 'info@gritandgrindfitness.com', 'Lunes a Domingo: 5am - 11pm', 'Ciudad Principal', 'Entrenamientos desafiantes y programas de acondicionamiento físico para todos.', 'gritandgrind_fitness.jpg', 0),
-(25, 'Active Life Fitness', 'Calle de la Actitud 456', 987654321, 'info@activelifefitness.com', 'Lunes a Viernes: 6am - 10pm', 'Otra Ciudad', 'Gimnasio moderno con clases grupales y equipo de entrenamiento variado.', 'activelife_fitness.jpg', 0),
-(26, 'Limitless CrossFit', 'Paseo de la Libertad 789', 111222333, 'contacto@limitlesscrossfit.com', 'Lunes a Sábado: 5am - 9pm', 'Ciudad Grande', 'Box de CrossFit comprometido con ayudarte a alcanzar tus objetivos de fitness.', 'limitless_crossfit.jpg', 0),
-(27, 'Xtreme Fitness Center', 'Calle de la Fuerza 123', 444555666, 'info@xtremefitnesscenter.com', 'Lunes a Domingo: 6am - 11pm', 'Otra Ciudad', 'Centro de fitness completo con clases y entrenamiento personalizado.', 'xtreme_fitness.jpg', 0),
-(28, 'FlexFit Gym', 'Avenida de la Flexibilidad 456', 777888999, 'contacto@flexfitgym.com', 'Lunes a Viernes: 7am - 10pm', 'Ciudad Ficticia', 'Gimnasio con equipos modernos y programas de entrenamiento versátiles.', 'flexfit_gym.jpg', 0),
-(29, 'Core Strength CrossFit', 'Calle de la Resistencia 789', 123987456, 'info@corestrengthcrossfit.com', 'Lunes a Sábado: 6am - 9pm', 'Otra Ciudad', 'Enfocado en el fortalecimiento del núcleo y el rendimiento atlético.', 'corestrength_crossfit.jpg', 0),
-(30, 'Fitness Fusion Studio', 'Paseo de la Fusión 123', 789456123, 'info@fitnessfusionstudio.com', 'Lunes a Domingo: 7am - 10pm', 'Ciudad Principal', 'Combinación de entrenamiento funcional, yoga y pilates para un enfoque holístico del fitness.', 'fitnessfusion.jpg', 0),
-(31, 'Pulse Performance Gym', 'Calle del Pulso 456', 555666777, 'contacto@pulseperformancegym.com', 'Lunes a Viernes: 6am - 10pm', 'Otra Ciudad', 'Gimnasio con entrenamiento de alta intensidad y equipos de calidad.', 'pulseperformance.jpg', 0),
-(32, 'FitLife Wellness Center', 'Avenida de la Vida 789', 123456789, 'info@fitlifewellnesscenter.com', 'Lunes a Sábado: 5am - 9pm', 'Ciudad Grande', 'Promoviendo un estilo de vida saludable con programas de fitness y bienestar.', 'fitlife_wellness.jpg', 0),
-(33, 'Elevate Fitness Studio', 'Paseo de la Elevación 123', 987654321, 'info@elevatefitnessstudio.com', 'Lunes a Domingo: 6am - 10pm', 'Otra Ciudad', 'Estudio de fitness con enfoque en ejercicios de cuerpo completo y movimientos funcionales.', 'elevate_fitness.jpg', 0),
-(34, 'Blaze CrossFit', 'Calle del Fuego 456', 111222333, 'contacto@blazecrossfit.com', 'Lunes a Viernes: 7am - 9pm', 'Ciudad Ficticia', 'Entrenamientos de alta intensidad y comunidad apasionada por el fitness.', 'blaze_crossfit.jpg', 0),
-(35, 'Harmony Gym', 'Avenida de la Armonía 789', 444555666, 'info@harmonygym.com', 'Lunes a Sábado: 6am - 10pm', 'Otra Ciudad', 'Gimnasio con un ambiente acogedor y variedad de clases grupales.', 'harmony_gym.jpg', 0),
-(36, 'Titanium Fitness Center', 'Calle del Titanio 123', 777888999, 'contacto@titaniumfitnesscenter.com', 'Lunes a Domingo: 5am - 11pm', 'Ciudad Principal', 'Centro de fitness con equipos de alta gama y entrenadores capacitados.', 'titanium_fitness.jpg', 0),
-(37, 'Dynamic Performance Gym', 'Paseo de la Dinámica 456', 123987456, 'info@dynamicperformancegym.com', 'Lunes a Sábado: 6am - 9pm', 'Otra Ciudad', 'Enfoque en entrenamiento de fuerza, resistencia y agilidad.', 'dynamic_performance.jpg', 0),
-(38, 'FitZone Fitness Studio', 'Avenida de la Zona Fitness 789', 789456123, 'info@fitzonefitnessstudio.com', 'Lunes a Viernes: 7am - 10pm', 'Ciudad Ficticia', 'Ofreciendo una amplia gama de clases y servicios para todos los niveles.', 'fitzone_fitness.jpg', 0),
-(39, 'Prime Fitness Club', 'Calle de la Excelencia 123', 555666777, 'contacto@primefitnessclub.com', 'Lunes a Sábado: 6am - 10pm', 'Otra Ciudad', 'Club de fitness premium con instalaciones de lujo y programas personalizados.', 'prime_fitness.jpg', 0),
-(40, 'Velocity CrossFit', 'Paseo de la Velocidad 456', 123456789, 'info@velocitycrossfit.com', 'Lunes a Domingo: 6am - 9pm', 'Ciudad Grande', 'CrossFit box enfocado en el rendimiento y el progreso personal.', 'velocity_crossfit.jpg', 0),
-(41, 'BodyFlex Fitness Studio', 'Avenida de la Flexibilidad 789', 987654321, 'contacto@bodyflexstudio.com', 'Lunes a Viernes: 5am - 11pm', 'Otra Ciudad', 'Estudio de fitness con clases variadas y equipo moderno.', 'bodyflex_fitness.jpg', 0),
-(42, 'Iron Strong CrossFit', 'Calle del Hierro 123', 111222333, 'info@ironstrongcrossfit.com', 'Lunes a Sábado: 6am - 9pm', 'Ciudad Ficticia', 'Desafiantes entrenamientos de CrossFit para mejorar la fuerza y la resistencia.', 'ironstrong_crossfit.jpg', 0),
-(43, 'FitPro Gym', 'Paseo del Profesional 456', 444555666, 'info@fitprogym.com', 'Lunes a Domingo: 7am - 10pm', 'Otra Ciudad', 'Gimnasio con programas de entrenamiento personalizado y seguimiento de progreso.', 'fitpro_gym.jpg', 0),
-(44, 'FlexFit Studio', 'Avenida de la Flexibilidad 789', 777888999, 'contacto@flexfitstudio.com', 'Lunes a Sábado: 6am - 9pm', 'Ciudad Principal', 'Estudio de fitness con enfoque en flexibilidad y movilidad.', 'flexfit_studio.jpg', 0),
-(45, 'Revolution CrossFit', 'Calle de la Revolución 123', 123987456, 'info@revolutioncrossfit.com', 'Lunes a Viernes: 6am - 10pm', 'Otra Ciudad', 'Box de CrossFit comprometido con transformaciones físicas y mentales.', 'revolution_crossfit.jpg', 0);
+INSERT INTO `boxes` (`ID_Boxes`, `Nombre`, `Direccion`, `Telefono`, `Email`, `Horario`, `Localidad`, `Descripcion`, `Foto`, `Is_Solicitud`, `Latitud`, `Longitud`) VALUES
+(1, 'Dragon box Granada', 'C/profesor motos guirao,2 local 1', 2147483647, 'alexcortesronda63@gmail.com', '8:00 a 21:00', 'Granada', 'aaaa', 'box1.jpg', 0, 40.41677500, -3.70379000),
+(12, 'Crossfit Altea', 'Calle almendras', 345345345, 'crossfitaltea@gmail.com', '6:00 - 21:00', 'Altea', 'asdasd', 'box1.jpg', 0, 40.41677500, -3.70379000),
+(13, 'Animal Box', 'C/ Camino la huerta edf. la cruz II, 9 Local D 9', 2147483647, 'alexcortesronda63@gmail.com', '6:00 - 21:00', 'Granada', 'asadasd', 'box1.jpg', 0, 39.46990000, -4.42150000),
+(16, 'CrossFit Elite', 'Calle del Deporte 123', 123456789, 'info@crossfitelite.com', 'Lunes a Viernes: 6am - 10pm', 'Ciudad Ficticia', 'El mejor lugar para entrenar y superar tus límites.', 'box1.jpg', 0, 40.41680000, -3.70380000),
+(17, 'Iron Gym', 'Avenida de la Fuerza 456', 987654321, 'contacto@irongym.com', 'Lunes a Sábado: 5am - 11pm', 'Otra Ciudad', 'Gimnasio especializado en levantamiento de pesas y entrenamiento funcional.', 'box1.jpg', 0, 41.38510000, 2.17340000),
+(18, 'FitBox', 'Calle de la Salud 789', 111222333, 'info@fitbox.com', 'Lunes a Domingo: 7am - 9pm', 'Ciudad Principal', 'Entrenamientos variados para todas las edades y niveles de condición física.', 'box1.jpg', 0, 39.46990000, -0.37630000),
+(19, 'Power Fitness Center', 'Paseo del Deporte 456', 444555666, 'contacto@powerfitness.com', 'Lunes a Viernes: 6am - 11pm', 'Otra Ciudad', 'Centro de fitness con equipos de última generación y entrenadores certificados.', 'box1.jpg', 0, 37.38860000, -5.98230000),
+(20, 'StrongBody CrossFit', 'Avenida de la Resistencia 789', 777888999, 'info@strongbodycrossfit.com', 'Lunes a Sábado: 5am - 10pm', 'Ciudad Grande', 'Ambiente amigable y programas de entrenamiento desafiantes para todos los niveles.', 'box1.jpg', 0, 41.64880000, -0.88910000),
+(21, 'Vitality Gym', 'Calle de la Vitalidad 123', 123987456, 'info@vitalitygym.com', 'Lunes a Domingo: 6am - 10pm', 'Otra Ciudad', 'Gimnasio completo con clases grupales y entrenamiento personalizado.', 'box1.jpg', 0, 36.72130000, -4.42150000),
+(22, 'Endurance Fitness Studio', 'Avenida de la Resistencia 456', 789456123, 'info@endurancefitness.com', 'Lunes a Viernes: 7am - 10pm', 'Ciudad Ficticia', 'Enfoque en entrenamientos de resistencia y cardio para mejorar la salud y el rendimiento.', 'box1.jpg', 0, 37.99220000, -1.13070000),
+(23, 'Eagles Nest CrossFit', 'Calle de la Fortaleza 789', 555666777, 'contacto@eaglesnestcrossfit.com', 'Lunes a Sábado: 6am - 9pm', 'Otra Ciudad', 'CrossFit box con entrenadores experimentados y comunidad acogedora.', 'box1.jpg', 0, 39.56960000, 2.65020000),
+(24, 'Grit & Grind Fitness', 'Paseo de la Determinación 123', 123456789, 'info@gritandgrindfitness.com', 'Lunes a Domingo: 5am - 11pm', 'Ciudad Principal', 'Entrenamientos desafiantes y programas de acondicionamiento físico para todos.', 'box1.jpg', 0, 28.12480000, -15.43000000),
+(25, 'Active Life Fitness', 'Calle de la Actitud 456', 987654321, 'info@activelifefitness.com', 'Lunes a Viernes: 6am - 10pm', 'Otra Ciudad', 'Gimnasio moderno con clases grupales y equipo de entrenamiento variado.', 'activelife_fitness.jpg', 0, 43.26300000, -2.93400000),
+(26, 'Limitless CrossFit', 'Paseo de la Libertad 789', 111222333, 'contacto@limitlesscrossfit.com', 'Lunes a Sábado: 5am - 9pm', 'Ciudad Grande', 'Box de CrossFit comprometido con ayudarte a alcanzar tus objetivos de fitness.', 'limitless_crossfit.jpg', 0, 38.34520000, -0.48100000),
+(27, 'Xtreme Fitness Center', 'Calle de la Fuerza 123', 444555666, 'info@xtremefitnesscenter.com', 'Lunes a Domingo: 6am - 11pm', 'Otra Ciudad', 'Centro de fitness completo con clases y entrenamiento personalizado.', 'xtreme_fitness.jpg', 0, 37.88820000, -4.77940000),
+(28, 'FlexFit Gym', 'Avenida de la Flexibilidad 456', 777888999, 'contacto@flexfitgym.com', 'Lunes a Viernes: 7am - 10pm', 'Ciudad Ficticia', 'Gimnasio con equipos modernos y programas de entrenamiento versátiles.', 'flexfit_gym.jpg', 0, 41.65200000, -4.72800000),
+(29, 'Core Strength CrossFit', 'Calle de la Resistencia 789', 123987456, 'info@corestrengthcrossfit.com', 'Lunes a Sábado: 6am - 9pm', 'Otra Ciudad', 'Enfocado en el fortalecimiento del núcleo y el rendimiento atlético.', 'corestrength_crossfit.jpg', 0, 42.24060000, -8.72070000),
+(30, 'Fitness Fusion Studio', 'Paseo de la Fusión 123', 789456123, 'info@fitnessfusionstudio.com', 'Lunes a Domingo: 7am - 10pm', 'Ciudad Principal', 'Combinación de entrenamiento funcional, yoga y pilates para un enfoque holístico del fitness.', 'fitnessfusion.jpg', 0, 43.52930000, -5.67730000),
+(31, 'Pulse Performance Gym', 'Calle del Pulso 456', 555666777, 'contacto@pulseperformancegym.com', 'Lunes a Viernes: 6am - 10pm', 'Otra Ciudad', 'Gimnasio con entrenamiento de alta intensidad y equipos de calidad.', 'pulseperformance.jpg', 0, 41.35960000, 2.10100000),
+(32, 'FitLife Wellness Center', 'Avenida de la Vida 789', 123456789, 'info@fitlifewellnesscenter.com', 'Lunes a Sábado: 5am - 9pm', 'Ciudad Grande', 'Promoviendo un estilo de vida saludable con programas de fitness y bienestar.', 'fitlife_wellness.jpg', 0, 43.36230000, -8.41150000),
+(33, 'Elevate Fitness Studio', 'Paseo de la Elevación 123', 987654321, 'info@elevatefitnessstudio.com', 'Lunes a Domingo: 6am - 10pm', 'Otra Ciudad', 'Estudio de fitness con enfoque en ejercicios de cuerpo completo y movimientos funcionales.', 'elevate_fitness.jpg', 0, 37.17730000, -3.59860000),
+(34, 'Blaze CrossFit', 'Calle del Fuego 456', 111222333, 'contacto@blazecrossfit.com', 'Lunes a Viernes: 7am - 9pm', 'Ciudad Ficticia', 'Entrenamientos de alta intensidad y comunidad apasionada por el fitness.', 'blaze_crossfit.jpg', 0, 42.86060000, -2.68180000),
+(35, 'Harmony Gym', 'Avenida de la Armonía 789', 444555666, 'info@harmonygym.com', 'Lunes a Sábado: 6am - 10pm', 'Otra Ciudad', 'Gimnasio con un ambiente acogedor y variedad de clases grupales.', 'harmony_gym.jpg', 0, 38.26540000, -0.69700000),
+(36, 'Titanium Fitness Center', 'Calle del Titanio 123', 777888999, 'contacto@titaniumfitnesscenter.com', 'Lunes a Domingo: 5am - 11pm', 'Ciudad Principal', 'Centro de fitness con equipos de alta gama y entrenadores capacitados.', 'titanium_fitness.jpg', 0, 28.46360000, -16.25180000),
+(37, 'Dynamic Performance Gym', 'Paseo de la Dinámica 456', 123987456, 'info@dynamicperformancegym.com', 'Lunes a Sábado: 6am - 9pm', 'Otra Ciudad', 'Enfoque en entrenamiento de fuerza, resistencia y agilidad.', 'dynamic_performance.jpg', 0, 41.45000000, 2.24740000),
+(38, 'FitZone Fitness Studio', 'Avenida de la Zona Fitness 789', 789456123, 'info@fitzonefitnessstudio.com', 'Lunes a Viernes: 7am - 10pm', 'Ciudad Ficticia', 'Ofreciendo una amplia gama de clases y servicios para todos los niveles.', 'fitzone_fitness.jpg', 0, 43.36240000, -5.84500000),
+(39, 'Prime Fitness Club', 'Calle de la Excelencia 123', 555666777, 'contacto@primefitnessclub.com', 'Lunes a Sábado: 6am - 10pm', 'Otra Ciudad', 'Club de fitness premium con instalaciones de lujo y programas personalizados.', 'prime_fitness.jpg', 0, 40.32230000, -3.86460000),
+(40, 'Velocity CrossFit', 'Paseo de la Velocidad 456', 123456789, 'info@velocitycrossfit.com', 'Lunes a Domingo: 6am - 9pm', 'Ciudad Grande', 'CrossFit box enfocado en el rendimiento y el progreso personal.', 'velocity_crossfit.jpg', 0, 37.60590000, -0.98620000),
+(41, 'BodyFlex Fitness Studio', 'Avenida de la Flexibilidad 789', 987654321, 'contacto@bodyflexstudio.com', 'Lunes a Viernes: 5am - 11pm', 'Otra Ciudad', 'Estudio de fitness con clases variadas y equipo moderno.', 'bodyflex_fitness.jpg', 0, 41.54630000, 2.10860000),
+(42, 'Iron Strong CrossFit', 'Calle del Hierro 123', 111222333, 'info@ironstrongcrossfit.com', 'Lunes a Sábado: 6am - 9pm', 'Ciudad Ficticia', 'Desafiantes entrenamientos de CrossFit para mejorar la fuerza y la resistencia.', 'ironstrong_crossfit.jpg', 0, 41.56660000, 2.00850000),
+(43, 'FitPro Gym', 'Paseo del Profesional 456', 444555666, 'info@fitprogym.com', 'Lunes a Domingo: 7am - 10pm', 'Otra Ciudad', 'Gimnasio con programas de entrenamiento personalizado y seguimiento de progreso.', 'fitpro_gym.jpg', 0, 36.68500000, -6.12660000);
 
 -- --------------------------------------------------------
 
@@ -107,7 +107,20 @@ INSERT INTO `clases` (`ID_Clases`, `Nombre`, `Horario`, `ID_Usuario`, `ID_Wods`,
 (5, 'th10', '21:20', 40, 7, 12, '2024-03-21'),
 (6, 'nuevoi', '16:28', 40, 7, 12, '2024-03-27'),
 (7, 'asdasd', '17:33', 52, 9, 13, '2024-03-20'),
-(8, 'clase de jose', '21:40', 40, 8, 12, '2024-03-19');
+(8, 'clase de jose', '21:40', 40, 8, 12, '2024-03-19'),
+(9, 'TDH', '11:04', 40, 3, 12, '2024-03-21'),
+(10, 'TDH', '12:04', 40, 4, 12, '2024-03-21'),
+(11, 'TDH', '13:04', 40, 10, 12, '2024-03-21'),
+(12, 'este team', '06:10', 40, 6, 12, '2024-03-21'),
+(13, 'Alex', '18:24', 40, 4, 12, '2024-03-21'),
+(14, 'Aerobivo', '20:00', 40, 62, 12, '2024-04-11'),
+(15, 'Maria la sonriente', '12:00', 40, 43, 12, '2024-04-14'),
+(16, 'Qualifiers 1', '17:00', 40, 52, 12, '2024-04-16'),
+(17, 'Qualifiers 2', '18:00', 40, 53, 12, '2024-04-16'),
+(18, 'qualifiers3', '19:00', 40, 54, 12, '2024-04-16'),
+(19, 'qualifiers 1', '17:00', 52, 52, 13, '2024-04-16'),
+(20, 'Base de datos', '18:00', 52, 11, 13, '2024-04-19'),
+(21, 'Los mismos', '12:08', 40, 18, 12, '2024-04-25');
 
 -- --------------------------------------------------------
 
@@ -122,6 +135,26 @@ CREATE TABLE `personal_records` (
   `Formato` enum('Kg','Lb','min') NOT NULL,
   `ID_Usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `personal_records`
+--
+
+INSERT INTO `personal_records` (`ID_Records`, `Tipo`, `Resultado`, `Formato`, `ID_Usuario`) VALUES
+(1, 'press de banca', 234, 'Kg', 49),
+(16, 'sentadilla', 234, 'Kg', 49),
+(17, 'hombros', 45, 'Kg', 49),
+(21, 'peso muerto', 130, 'Kg', 49),
+(22, 'clean', 60, 'Kg', 49),
+(23, 'snatch', 60, 'Kg', 49),
+(24, 'power clean', 234, 'Kg', 49),
+(25, 'snatch clean', 55, 'Kg', 49),
+(31, 'Sentadilla frontal', 90, 'Kg', 49),
+(33, 'hang power clean', 60, 'Kg', 49),
+(39, 'walk wall', 3, 'Kg', 49),
+(40, 'walk wall', 3, 'Kg', 49),
+(41, 'press de banca', 120, 'Kg', 40),
+(42, 'press de banca', 120, 'Kg', 52);
 
 -- --------------------------------------------------------
 
@@ -145,7 +178,11 @@ INSERT INTO `reservas` (`ID_Reservas`, `Fecha`, `ID_Usuario`, `ID_Clases`) VALUE
 (31, '2024-03-20', 49, 1),
 (32, '2024-03-20', 49, 4),
 (34, '2024-03-20', 50, 5),
-(35, '2024-03-20', 50, 3);
+(35, '2024-03-20', 50, 3),
+(38, '2024-04-11', 40, 14),
+(41, '2024-04-14', 49, 15),
+(42, '2024-04-16', 40, 16),
+(45, '2024-04-24', 40, 21);
 
 -- --------------------------------------------------------
 
@@ -193,12 +230,13 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`ID_Usuario`, `Nombre`, `Apellido`, `Email`, `Username`, `Password`, `Fecha_Creacion`, `Foto`, `Is_Admin`, `Is_Instructor`, `ID_Boxes`) VALUES
 (36, 'Alex', 'cortes ronda', 'alexcortesronda63@gmail.com', 'alex', '$2y$10$SMtZYVFpGZA.SQF7v4M0Ru14lcmUX.pdjLmWI1V64tSTofKq4RW.K', '2024-03-13', '', 0, 0, 1),
 (40, 'Jose', 'Anderson', 'crossfitaltea@gmail.com', 'jose', '$2y$10$LCNm1kjI27DVs7vx71Ix7uygRX98A/8IuWzmpF3kUUReLCGy1Q7zm', '2024-03-13', '', 1, 0, 12),
-(41, 'Jose Antonio', 'Tenz', 'alexcortesronda63@gmail.com', 'antonio', '$2y$10$jv9Zw7cfsC4U3Lr2X/9yT.Ip82R.Sa2rvxLI5YNS8ddO/484dnuYy', '2024-03-13', '', 1, 0, 13),
+(41, 'Jose Antonio', 'Tenz', 'alexcortesronda63@gmail.com', 'antonio', '$2y$10$jv9Zw7cfsC4U3Lr2X/9yT.Ip82R.Sa2rvxLI5YNS8ddO/484dnuYy', '2024-03-13', '', 1, 1, 13),
 (42, 'Ramon', 'perez', 'alexcortesronda63@gmail.com', 'ramon', '$2y$10$VZTDbgTl1MMQzjmQGryKc.KQ/2VKIeFd2DPlc8ujRTcBfhgSTZmay', '2024-03-13', '', 0, 0, 1),
-(49, 'Esteban', 'co', 'alexcortesronda63@gmail.com', 'esteban', '$2y$10$w4cUvzSam2qVHumu3/ZgzeXC1P3ComTaPO4Kz2etZ2aPGF3JpIjSW', '2024-03-13', '', 0, 0, 12),
+(49, 'Esteban', 'co', 'alexcortesronda63@gmail.com', 'esteban', '$2y$10$cc8nIi8Rtv1UDTZyr3RRdeMk1SEyj4plw/I0TvXuJtowW6/7LCN1C', '2024-03-13', 'box2.jpg', 0, 0, 12),
 (50, 'sancho', 'lkjsadf', 'alexcortesronda63@gmail.com', 'sancho', '$2y$10$Rz7FheyxBpiz8E8b59ao1O.ohWBolzP2fo7ppb20O8i1/WYc/gVsG', '2024-03-13', '', 0, 0, 12),
 (51, 'encarnma', 'cortes ronda', 'alexcortesronda63@gmail.com', 'encarna', '$2y$10$RGZY8HSx3p561NdOuAY1ieRAXwm2HlAzJgdDgLJNyeqrlNhxzDyPa', '2024-03-13', '', 0, 0, 1),
-(52, 'angie', 'cortes ronda', 'alexcortesronda63@gmail.com', 'angie', '$2y$10$dtDDnwUg5DIg3a8ZAPUp6us79V/tt5mR7isCKhKv/q6X2rpRBz.eG', '2024-03-13', '', 0, 1, 13);
+(52, 'angie', 'cortes ronda', 'alexcortesronda63@gmail.com', 'angie', '$2y$10$dtDDnwUg5DIg3a8ZAPUp6us79V/tt5mR7isCKhKv/q6X2rpRBz.eG', '2024-03-13', '', 0, 1, 13),
+(58, 'John', 'Doe', 'johndoe@example.com', 'johndoe', 'contraseña123', '2024-04-15', ' ', 0, 1, 12);
 
 -- --------------------------------------------------------
 
@@ -350,25 +388,25 @@ ALTER TABLE `wods`
 -- AUTO_INCREMENT de la tabla `boxes`
 --
 ALTER TABLE `boxes`
-  MODIFY `ID_Boxes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `ID_Boxes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT de la tabla `clases`
 --
 ALTER TABLE `clases`
-  MODIFY `ID_Clases` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID_Clases` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `personal_records`
 --
 ALTER TABLE `personal_records`
-  MODIFY `ID_Records` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Records` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de la tabla `reservas`
 --
 ALTER TABLE `reservas`
-  MODIFY `ID_Reservas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `ID_Reservas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de la tabla `superadmin`
@@ -380,7 +418,7 @@ ALTER TABLE `superadmin`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de la tabla `wods`
