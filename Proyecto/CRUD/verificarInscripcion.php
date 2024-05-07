@@ -21,7 +21,6 @@ if (isset($_POST['clase_id'])) {
     $result_check_reservation = $conexion->query($sql_check_reservation);
 
     if ($result_check_reservation->num_rows > 0) {
-        // El usuario ya está inscrito en la clase
         $response = array("success" => true, "inscrito" => true);
     } else {
         // El usuario no está inscrito en la clase
