@@ -20,16 +20,16 @@ $(document).ready(function(){
                     // Verificar el tipo de usuario y redirigir según el tipo
                     switch (response.userType) {
                         case 'admin':
-                            window.location.href = "../admin/inicioAdmin.php"; // Redireccionar a la página de admin
+                            window.location.href = "../admin/inicioAdmin.php"; 
                             break;
                         case 'atleta':
-                            window.location.href = "inicio.php"; // Redireccionar a la página de atleta
+                            window.location.href = "inicio.php"; 
                             break;
                         case 'instructor':
-                            window.location.href = "../instructor/inicioInstructor.php"; // Redireccionar a la página de atleta
+                            window.location.href = "../instructor/inicioInstructor.php"; 
                             break;
                         case 'superadmin':
-                            window.location.href = "../adminInmortal/panelAdministracion.php"; // Redireccionar a la página de superadmin
+                            window.location.href = "../adminInmortal/panelAdministracion.php"; 
                             break;
                         default:
                             // Tipo de usuario no reconocido

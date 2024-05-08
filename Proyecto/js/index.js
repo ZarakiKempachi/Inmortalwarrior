@@ -89,7 +89,7 @@ $(document).ready(function () {
 
 
 
-
+//Registro atleta
 $(document).ready(function () {
     // Manejar el envío del formulario usando AJAX
     $(document).on('click', '#formularioRegistroAlumnos', function (e) {
@@ -156,7 +156,7 @@ $(document).ready(function () {
     });
 });
 
-
+//Función para cargar los boxes en el select
     $(document).ready(function(){
         // Manejar el evento de cambio en el primer select (ciudades)
         $("#ciudades").change(function(){
