@@ -7,6 +7,7 @@ ini_set('display_errors', '1');
 
 $usuarios = obtenerUsuarios();
 echo '<div class="container general">';
+echo '<a href="inicioAdmin.php" class=" btn  "><i class="bi  bi-arrow-left "></i></a>';
 echo '<h2>Lista de Usuarios</h2>';
 echo '<table class="table table-bordered">';
 echo '<thead class="thead-dark">';

@@ -59,7 +59,7 @@ include '../modulos/headerInstructor.php';
                     <img src="../img/programas.jpg" class="img-wods  img-thumbnail" alt="...">
                     <div class="overlay-text">
                         <div class="titulo-seccion">
-                            Programas
+                            Programs
                         </div>
                     </div>
                 </a>
