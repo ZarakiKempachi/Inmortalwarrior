@@ -275,3 +275,35 @@ function mostrarListaUsuariosInscritos(calendar, claseId, formattedHorario) {
     });
 }
 
+$(document).ready(function() {
+    // Manejador de eventos de clic para el botón "Borrar"
+    $('.borrarBox').click(function() {
+        // Obtener el ID de la clase a borrar desde el atributo data
+        var claseId = $(this).data('clase-id');
+
+        // Confirmar con el usuario si realmente desea borrar la clase
+        if (confirm('¿Estás seguro de que quieres borrar esta clase?')) {
+            // Enviar una solicitud AJAX para eliminar la clase
+            $.ajax({
+                type: 'POST',
+                url: '../CRUD/eliminar_clase.php', 
+                data: {
+                    claseId: claseId
+                },
+                success: function(response) {
+                    // Si la clase se eliminó con éxito en el servidor, eliminar la fila correspondiente de la lista visual
+                    if (response.success) {
+                        $('[data-clase-id="' + claseId + '"]').closest('tr').remove();
+                    } else {
+                        alert(response.message); // Mostrar un mensaje de error si la eliminación falló en el servidor
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error(error); // Manejar errores de la solicitud AJAX
+                }
+            });
+        }
+    });
+});
+
+

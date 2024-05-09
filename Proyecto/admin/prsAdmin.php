@@ -69,46 +69,7 @@ if (isset($_SESSION["user_id"])) {
         </table>
     </div>
 </div>
-<script>
-   $(document).ready(function() {
-    $('.editarBox').click(function() {
-        var fila = $(this).closest('tr');
-        var id = fila.data('id');
-        var resultado = fila.find('.resultado').text();
-        swal({
-            content: {
-                element: "input",
-                attributes: {
-                    placeholder: "Introduce el nuevo resultado",
-                    
-                },
-            },
-        }).then(function(nuevoResultado) {
-            // nuevoResultado contiene el valor ingresado por el usuario
-            if (nuevoResultado !== null) {
-                // Realizar una solicitud AJAX para actualizar el resultado en la base de datos
-                $.ajax({
-                    type: 'POST',
-                    url: 'prsAdmin.php',
-                    data: {
-                        id: id,
-                        nuevoResultado: nuevoResultado
-                    },
-                    success: function(response) {
-                        // Actualizar el valor en la página después de que se haya actualizado en la base de datos
-                        fila.find('.resultado').text(nuevoResultado);
-                    },
-                    error: function(xhr, status, error) {
-                        // Manejar errores si ocurre alguno
-                        console.error(xhr.responseText);
-                    }
-                });
-            }
-        });
-    });
-});
 
-</script>
 
 <?php
 function actualizarResultado($id, $nuevoResultado)
@@ -138,7 +99,7 @@ if (isset($_POST['id']) && isset($_POST['nuevoResultado'])) {
     // Llamar a la función actualizarResultado para actualizar el resultado en la base de datos
     actualizarResultado($id, $nuevoResultado);
 } else {
-    echo "Parámetros incorrectos";
+    
 }
 
 

@@ -46,7 +46,7 @@ if (isset($_SESSION['username'])) {
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/calendario.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="icon" href="img/logo_bueno.jpg" type="image/x-icon">
+    <link rel="icon" href="../img/logo_bueno.jpg" type="image/x-icon">
 
 
     <!-- JS para iconos del pie de página -->

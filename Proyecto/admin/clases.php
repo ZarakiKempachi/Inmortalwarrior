@@ -4,7 +4,7 @@ include '../modulos/headerAdmin.php';
 
     <div class="container" id="opciones-perfil">
         <h2 class="mt-5">Crear Clase</h2>
-        <form id="crearClaseForm" class="mt-3">
+        <form id="crearClaseForm" class="my-3">
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre de la Clase:</label>
                 <input type="text" class="form-control" id="nombreClase" name="nombre" required>
@@ -43,8 +43,9 @@ include '../modulos/headerAdmin.php';
             <button type="submit" class="crearClase btn btn-secondary">Crear Clase</button>
         </form>
     </div>
-
-
+<?php
+    include '../CRUD/verClasesCreadas.php';
+?>
 <?php
 include '../modulos/footer.php';
 ?>
