@@ -70,7 +70,7 @@ $(document).ready(function() {
                 $.ajax({
                     url: '../CRUD/denegar_box.php',
                     type: 'POST',
-                    data: { id_box: idBox }, // Envía el ID del box al servidor
+                    data: { id_box: idBox }, 
                     dataType: 'json',
                     success: function(response) {
                         if (response.success) {
