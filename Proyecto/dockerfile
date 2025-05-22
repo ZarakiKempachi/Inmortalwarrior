@@ -1,0 +1,14 @@
+# Usa una imagen oficial de PHP
+FROM php:8.2-cli
+
+# Establece el directorio de trabajo dentro del contenedor
+WORKDIR /var/www/html
+
+# Copia todos los archivos y carpetas al contenedor
+COPY . .
+
+# Expone el puerto 10000
+EXPOSE 10000
+
+# Comando para iniciar el servidor PHP embebido
+CMD ["php", "-S", "0.0.0.0:10000"]
